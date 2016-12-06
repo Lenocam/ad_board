@@ -13,4 +13,22 @@ describe UserPolicy do
       expect(UserPolicy).to permit(admin)
     end
   end
+
+  permissions :show? do
+    it 'prevents other_user from seeing profile' do
+      expect(subject).not_to permit(current_user, other_user)
+    end
+
+    it 'allows owner to see profile' do
+      expect(subject).to permit(current_user, current_user)
+    end
+
+    it 'allows admin to see profile' do
+      expect(subject).to permit(admin)
+    end
+
+  end
+  permissions :destroy? do
+
+  end
 end
