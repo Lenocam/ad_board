@@ -1,17 +1,35 @@
-describe GalleryPolicy do
-  subject { GalleryPolicy }
+=begin
+require 'rails_helper'
 
-  let(:current_user) { FactoryGirl.build_stubbed :user }
-  let(:other_user) { FactoryGirl.build_stubbed :user }
-  let(:admin) { FactoryGirl.build_stubbed :user, :admin }
+RSpec.describe GalleryPolicy do
 
-  permissions :index? do
-    it 'denies other_user from seeing current_user index' do
-      expect(subject).not_to permit(current_user, other_user)
-    end
-    it 'allows owner to see gallery' do
-      expect(subject).to permit(current_user)
-    end
+  #let(:user) { User.new }
+
+  subject { GalleryPolicy.new(user, gallery) }
+
+
+  #let(:gallery) { FactoryGirl.create(:gallery) }
+
+
+  context "for a vistor" do
+
+    let(:user) { nil }
+
+
+    it { should_not permit(:show)}
+    it { should_not permit(:index)}
+    it { should_not permit(:new)}
+    it { should_not permit(:create)}
+    it { should_not permit(:update)}
+    it { should_not permit(:edit)}
+    it { should_not permit(:destroy)}
   end
 
+  context "for a user" do
+
+
+  end
+
+
 end
+=end

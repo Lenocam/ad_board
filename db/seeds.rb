@@ -9,11 +9,27 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 15.times do |n|
+  name = Faker::GameOfThrones.character
   email = "example-#{n+1}@example.org"
   password = "password"
   User.create!(
+                name:                  name,
                 email:                 email,
                 password:              password,
                 password_confirmation: password
+  )
+end
+
+4.times do |n|
+  name = Faker::GameOfThrones.character
+  email = "testing-#{n+1}@example.org"
+  password = "password"
+  role = :admin
+  User.create!(
+                name:                  name,
+                email:                 email,
+                password:              password,
+                password_confirmation: password,
+                role:                  role
   )
 end

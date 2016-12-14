@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :gallery do
-    title "MyString"
-    user nil
+    title { Faker::Book.title }
+    association :user
   end
 end
