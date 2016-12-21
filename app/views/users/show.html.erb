@@ -1,8 +1,7 @@
 <h1>User#show</h1>
 <p>Find me in app/views/user/show.html.erb</p>
-<p>
-  You are signed in as: <b><%= current_user.email %></b> Admin
-</p>
-<p>
-  You are in the show page for: <b><%= @user.email  %></b>
-</p>
+<% if current_user.admin? %>
+  <p>You are signed in as: <b><%= current_user.email %></b> Admin</p>
+<% end %>
+
+<p>You are in the show page for: <b><%= @user.email %></b></p>
