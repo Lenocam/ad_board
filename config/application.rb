@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module AdBoard
   class Application < Rails::Application
+    config.secret_key_base = Figaro.env.secret_key_base
 
     config.generators do |g|
       g.test_framework :rspec,
