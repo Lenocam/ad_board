@@ -1,0 +1,16 @@
+<div class="bigbox">
+  <div class="box">
+    <p>
+      You are signed in as: <b><%= current_user.email %></b> Admin
+    </p>
+    <table class="table-minimal">
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <%= render user %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

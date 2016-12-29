@@ -1,0 +1,11 @@
+<h1><%= current_user.email %>'s Galleries</h1>
+<p>
+  You are signed in as: <b><%= current_user.email %></b> Admin
+</p>
+<% (current_user.galleries).each do |gallery| %>
+  <ul>
+    <li><%= link_to gallery.title, gallery %></li>
+    <li><%= gallery.user_id %></li>
+    <li><%= gallery.user.email %></li>
+  </ul>
+<% end %>
