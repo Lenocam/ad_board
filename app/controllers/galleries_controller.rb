@@ -1,8 +1,7 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_user!
-  after_action :verify_authorized, :except => :index
-  after_action :verify_policy_scoped, :only => :index
-
+  after_action :verify_authorized, except: :index
+  after_action :verify_policy_scoped, only: :index
 
   def index
     @galleries = policy_scope(Gallery)
@@ -16,6 +15,7 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = current_user.galleries.build(gallery_params)
+    authorize @gallery
     respond_to do |format|
       if @gallery.save
           format.html { redirect_to @gallery, success: "Gallery was successfully created." }
@@ -25,12 +25,14 @@ class GalleriesController < ApplicationController
         format.json { render json: @gallery.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   def show
     @gallery = Gallery.find(params[:id])
     authorize @gallery
   end
+
   private
     def gallery_params
       params.require(:gallery).permit(:title)

@@ -5,7 +5,7 @@ RSpec.describe GalleryPolicy do
   #saying user and gallery were undefined variables
   subject { GalleryPolicy.new(user, gallery) }
 
-  context "for a vistor" do #passes I know why
+  context "for a vistor" do
     it "has(gallery) a valid factory" do
       expect(FactoryGirl.build(:gallery)).to be_valid
     end
@@ -19,5 +19,9 @@ RSpec.describe GalleryPolicy do
           expect(GalleryPolicy).not_to permit(FactoryGirl.build(:user, id: nil), FactoryGirl.create(:gallery))
         end
       end
+  end
+
+  context "for a user" do
+
   end
 end

@@ -5,3 +5,8 @@
 <% end %>
 
 <p>You are in the show page for: <b><%= @user.email %></b></p>
+
+
+<ul>
+  <li><%= link_to "User's Gallery", user_galleries_url(current_user) %></li>
+</ul>
