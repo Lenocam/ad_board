@@ -8,12 +8,14 @@
                     Welcome
                 </a>
             </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Shortcuts</a>
-            </li>
+            <% if user_signed_in? %>
+              <li>
+                  <%= link_to "Dashboard", user_path(current_user) %>
+              </li>
+              <li>
+                  <%= link_to "#{current_user.name}'s Galleries", user_galleries_url(current_user) %>
+              </li>
+            <% end %>
             <li>
                 <a href="#">Overview</a>
             </li>

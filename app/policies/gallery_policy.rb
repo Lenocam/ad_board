@@ -17,10 +17,6 @@ class GalleryPolicy < ApplicationPolicy
   end
 
   def new?
-    create?
-  end
-
-  def new?
     true
   end
 end

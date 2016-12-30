@@ -8,13 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <header>
+<body>
+  <header>
       <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
-  </body>
+  </header>
+  <main role="main">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+  </main>
+</body>
 </html>

@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users, shallow: true do
     resources :galleries
   end
+
+  match "*path", :to => "application#routing_error", via: :all
 end
