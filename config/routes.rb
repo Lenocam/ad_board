@@ -12,6 +12,8 @@ Rails.application.routes.draw do
       as :user do
         post   "/sign-in"  => "sessions#create"
         delete "/sign-out" => "sessions#destroy"
+
+        resources :users, only: [:show]
       end
     end
   end
