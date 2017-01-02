@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::RedirectBackError, with: :redirect_back_exception
   rescue_from ActionView::MissingTemplate, with: :redirect_missing_template
-  rescue_from ActionController::RoutingError, with: :record_not_found
+  #rescue_from ActionController::RoutingError, with: :record_not_found
 
   protect_from_forgery with: :exception
 
@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
 
-    def routing_error
-      flash[:alert] = "You have experienced a routing error. Find some direction"
-      raise ActionController::RoutingError.new(params[:path])
-    end
+    #def routing_error
+    #  flash[:alert] = "You have experienced a routing error. Find some direction"
+    #  raise ActionController::RoutingError.new(params[:path])
+    #end
 end

@@ -5,5 +5,14 @@ Rails.application.routes.draw do
     resources :galleries
   end
 
-  match "*path", :to => "application#routing_error", via: :all
+  #match "*path", :to => "application#routing_error", via: :all
+
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      as :user do
+        post   "/sign-in"  => "sessions#create"
+        delete "/sign-out" => "sessions#destroy"
+      end
+    end
+  end
 end
