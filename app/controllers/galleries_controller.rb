@@ -9,23 +9,20 @@ class GalleriesController < ApplicationController
   end
 
   def new
-    @gallery = Gallery.new #current_user.galleries.build
+    @gallery = current_user.galleries.build #Gallery.new
     authorize @gallery
   end
 
   def create
     @gallery = current_user.galleries.build(gallery_params)
     authorize @gallery
-    respond_to do |format|
-      if @gallery.save
-          format.html { redirect_to @gallery, success: "Gallery was successfully created." }
-          format.json { render :show, status: :created, location: @gallery }
-      else
-        format.html { render :new, alert: "There was a problem" }
-        format.json { render json: @gallery.errors, status: :unprocessable_entity }
-      end
+    if @gallery.save
+      flash[:success] = "Your gallery was successfully created."
+      redirect_to @gallery
+    else
+      flash[:alert] = "Your gallery must have a unique title."
+      render :new
     end
-
   end
 
   def show
