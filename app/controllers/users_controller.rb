@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  after_action :verify_authorized, :except => :index #causing error
+  after_action :verify_authorized, :except => :index
 
   def index
     @users = User.all
