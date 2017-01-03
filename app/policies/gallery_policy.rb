@@ -13,7 +13,7 @@ class GalleryPolicy < ApplicationPolicy
   end
 
   def show?
-    @gallery.user == @user
+    @gallery.user == @user || @user.admin?
   end
 
   def new?
