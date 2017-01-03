@@ -1,7 +1,7 @@
 module Api
   module V1
     class UsersController < Api::V1::BaseController
-      before_action :require_login!
+      #before_action :require_login!
       def show
         @user = User.find(params[:id])
         if @user == current_user || current_user.admin?
