@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
+
       as :user do
         post   "/sign-in"  => "sessions#create"
         delete "/sign-out" => "sessions#destroy"

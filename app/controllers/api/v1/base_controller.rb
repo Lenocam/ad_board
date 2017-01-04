@@ -1,7 +1,7 @@
 module Api
   module V1
     class BaseController < ActionController::Base
-      before_action :require_login!
+      before_action :require_login!, except: [:create]
       helper_method :person_signed_in?, :current_user
 
       def user_signed_in?
