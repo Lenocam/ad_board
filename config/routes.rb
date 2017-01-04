@@ -13,8 +13,8 @@ Rails.application.routes.draw do
         post   "/sign-in"  => "sessions#create"
         delete "/sign-out" => "sessions#destroy"
 
-        resources :users, only: [:show], shallow: true do
-          resources :galleries, only: [:show, :index]
+        resources :users, shallow: true do
+          resources :galleries
         end
       end
     end
