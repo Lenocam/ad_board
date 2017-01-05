@@ -17,13 +17,18 @@ module Api
       end
 
       def create
-        @gallery = current_user.galleries.build(gallery_params)
+        @gallery = Gallery.new(gallery_params)
         if @gallery.save
-          render :show, status: :created
+          render :show, status: 201
         else
           render json: @gallery.errors, status: :unprocessable_entity
         end
 
+      end
+
+      private
+      def gallery_params
+        ActiveModelSerializers::Deserialization.jsonapi_parse(params)
       end
     end
   end

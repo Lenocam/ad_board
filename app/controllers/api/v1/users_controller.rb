@@ -1,6 +1,7 @@
 module Api
   module V1
     class UsersController < Api::V1::BaseController
+      respond_to :json
       before_action :set_user, only: [:show, :update, :destroy]
       before_action :check_header
       before_action :validate_type, only: [:create, :update]
@@ -28,6 +29,14 @@ module Api
         @user = User.new(user_params)
         if @user.save
           render json: @user, status: :created
+        else
+          render_error(@user, :unprocessable_entity)
+        end
+      end
+
+      def update
+        if @user.update_attributes(user_params)
+          render json: @user, status: :ok
         else
           render_error(@user, :unprocessable_entity)
         end
@@ -70,14 +79,15 @@ module Api
       end
       head 409 and return
     end
-=begin
-    def validate_user
-      token = request.headers["X-Api-Key"]
-      head 403 and return unless token
-      @user = User.find_by auth_token: token
-      head 403 and return unless @user
-    end
-=end
+
+    #def validate_user
+    #  token = request.headers["WWW-Authenticate"]
+    #  byebug
+    #  head 403 and return unless token
+    #  @user = User.find_by auth_token: token
+    #  head 403 and return unless @user
+    #end
+
     end
   end
 end
