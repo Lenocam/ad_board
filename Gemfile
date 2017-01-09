@@ -10,7 +10,8 @@ gem 'turbolinks', '~> 5'
 gem 'figaro'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'rack-cors', :require => 'rack/cors'
-gem "responders"
+gem 'responders'
+gem 'carrierwave-base64'
 
 group :development, :test do
   gem 'byebug', platform: :mri

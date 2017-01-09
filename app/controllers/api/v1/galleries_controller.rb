@@ -13,7 +13,6 @@ module Api
 
       def new
         @gallery = current_user.galleries.build
-
       end
 
       def create
