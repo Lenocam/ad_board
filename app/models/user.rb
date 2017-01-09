@@ -7,10 +7,11 @@ class User < ApplicationRecord
 
   has_many :galleries, dependent: :destroy
   has_many :images, dependent: :destroy
+  has_many :categories, dependent: :destroy
 
   validates :name, presence: true
-  accepts_nested_attributes_for :images
-
+  accepts_nested_attributes_for :images, :galleries, :categories, allow_destroy: true
+  
   def set_default_role
     self.role ||= :user
   end
