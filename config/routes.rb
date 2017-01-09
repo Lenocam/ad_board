@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, path: 'accounts', :controllers => { registrations: 'registrations'}
   resources :users, shallow: true do
     resources :galleries
+    resources :images
   end
 
   #match "*path", :to => "application#routing_error", via: :all
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
 
         resources :users, shallow: true do
           resources :galleries
+          resources :images
         end
       end
     end
