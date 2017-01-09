@@ -1,19 +1,19 @@
 class GalleryPolicy < ApplicationPolicy
-  attr_reader :user, :model
+  attr_reader :current_user, :model
 
-  def initialize(user, model)
-    @user = user
+  def initialize(current_user, model)
+    @current_user = current_user
     @gallery = model
   end
 
   class Scope < Scope
     def resolve
-        scope.where(:user_id == user.id)
+        scope.where(:current_user_id == current_user.id)
     end
   end
 
   def show?
-    @gallery.user == @user || @user.admin?
+    @gallery.user == @current_user || @current_user.admin?
   end
 
   def new?

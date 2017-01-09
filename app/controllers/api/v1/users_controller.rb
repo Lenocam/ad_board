@@ -42,6 +42,11 @@ module Api
         end
       end
 
+      def destroy
+        @user.destroy
+        head 204
+      end
+
   private
 
     def user_params

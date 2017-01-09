@@ -19,7 +19,7 @@ module Api
       def create
         @gallery = Gallery.new(gallery_params)
         if @gallery.save
-          render :show, status: 201
+          render json: @gallery, status: 201
         else
           render json: @gallery.errors, status: :unprocessable_entity
         end

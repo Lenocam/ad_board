@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::RedirectBackError, with: :redirect_back_exception
   rescue_from ActionView::MissingTemplate, with: :redirect_missing_template
   #rescue_from ActionController::RoutingError, with: :record_not_found
 
-  protect_from_forgery with: :exception
+
 
   private
     def user_not_authorized
