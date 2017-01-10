@@ -8,6 +8,6 @@ class Category < ApplicationRecord
   has_many   :galleries, through: :category_galleries
   has_many   :category_galleries, dependent: :destroy
 
-  validates  :name, presence: true, length: { minimum: 3, maximum: 25 }
+  validates  :name, presence: true, length: { minimum: 3, maximum: 40 }
   validates_uniqueness_of :name, scope: :user_id
 end

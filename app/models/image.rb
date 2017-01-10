@@ -6,6 +6,6 @@ class Image < ApplicationRecord
   has_many :categories, through: :category_images
   has_many :category_images, dependent: :destroy
 
-  has_many   :gallery_images, dependent: :destroy
-  has_many   :galleries, through: :gallery_images
+  has_many :gallery_images, dependent: :destroy
+  has_many :galleries, through: :gallery_images
 end

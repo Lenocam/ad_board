@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109192229) do
+ActiveRecord::Schema.define(version: 20170110172029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,24 @@ ActiveRecord::Schema.define(version: 20170109192229) do
     t.index ["image_id", "category_id"], name: "index_categories_images_on_image_id_and_category_id", using: :btree
   end
 
+  create_table "category_galleries", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "gallery_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_category_galleries_on_category_id", using: :btree
+    t.index ["gallery_id"], name: "index_category_galleries_on_gallery_id", using: :btree
+  end
+
+  create_table "category_images", force: :cascade do |t|
+    t.integer  "category_id"
+    t.integer  "image_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["category_id"], name: "index_category_images_on_category_id", using: :btree
+    t.index ["image_id"], name: "index_category_images_on_image_id", using: :btree
+  end
+
   create_table "galleries", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
@@ -43,6 +61,15 @@ ActiveRecord::Schema.define(version: 20170109192229) do
     t.integer "image_id",   null: false
     t.index ["gallery_id", "image_id"], name: "index_galleries_images_on_gallery_id_and_image_id", using: :btree
     t.index ["image_id", "gallery_id"], name: "index_galleries_images_on_image_id_and_gallery_id", using: :btree
+  end
+
+  create_table "gallery_images", force: :cascade do |t|
+    t.integer  "gallery_id"
+    t.integer  "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gallery_id"], name: "index_gallery_images_on_gallery_id", using: :btree
+    t.index ["image_id"], name: "index_gallery_images_on_image_id", using: :btree
   end
 
   create_table "images", force: :cascade do |t|
@@ -75,6 +102,16 @@ ActiveRecord::Schema.define(version: 20170109192229) do
   end
 
   add_foreign_key "categories", "users"
+  add_foreign_key "categories_images", "categories"
+  add_foreign_key "categories_images", "images"
+  add_foreign_key "category_galleries", "categories"
+  add_foreign_key "category_galleries", "galleries"
+  add_foreign_key "category_images", "categories"
+  add_foreign_key "category_images", "images"
   add_foreign_key "galleries", "users"
+  add_foreign_key "galleries_images", "galleries"
+  add_foreign_key "galleries_images", "images"
+  add_foreign_key "gallery_images", "galleries"
+  add_foreign_key "gallery_images", "images"
   add_foreign_key "images", "users"
 end
