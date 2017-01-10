@@ -1,0 +1,23 @@
+<div id="image-index">
+
+	<p id="notice"><%= notice %></p>
+
+	<h1><%= current_user.name %>'s Images</h1>
+
+	<div class="image_container">
+		<% @images.each do |image| %>
+		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+			<li>
+				<%= image_tag image %>
+			</li>
+			<li><%= link_to 'Show', image %></li>
+			<li><%= link_to 'Edit', edit_image_path(image) %></li>
+			<li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		</ul>
+		<% end %>
+	</div>
+
+	<br>
+	<div><%= link_to 'New Image', new_user_image_path %></div>
+	<div><%= link_to 'Back', :back %></div>
+</div>
