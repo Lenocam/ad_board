@@ -1,17 +1,45 @@
-<h1><%= current_user.email %>'s Galleries</h1>
-<% if true %>
-  <ul>
-    <li>You are signed in as: <b><%= current_user.email %></b> Admin</li>
-  </ul>
-<% end %>
+<% if false %>
+  <h1><%= current_user.email %>'s Galleries</h1>
+  <% if true %>
+    <ul>
+      <li>You are signed in as: <b><%= current_user.email %></b> Admin</li>
+    </ul>
+  <% end %>
 
-<% (current_user.galleries).each do |gallery| %>
+  <% (current_user.galleries).each do |gallery| %>
+    <ul>
+      <li><%= link_to gallery.title, gallery %></li>
+      <li><%= gallery.user_id %></li>
+      <li><%= gallery.user.email %></li>
+    </ul>
+  <% end %>
+    <ul>
+      <li><%= link_to "New Gallery", new_user_gallery_path(current_user) %></li>
+    </ul>
+<% end %>
+<% if true %>
+  <h1><%= current_user.name %>'s Galleries</h1>
+
+  <div class="row">
+  	<div class="flex-images">
+  		<% @galleries.each do |gallery| %>
+  		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+  			<li><%=link_to gallery.title, gallery %></li>
+  			<li class="item floating-box">
+          <% if gallery.categories_images %>
+  				    <%= link_to image_tag(gallery.categories_images.first), gallery %>
+          <% end %>
+  			</li>
+  			<li><%= link_to 'Show', gallery %></li>
+  			<li><%= link_to 'Edit', edit_gallery_path(gallery) %></li>
+  			<li><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  		</ul>
+  		<% end %>
+  	</div>
+  </div>
+  <br>
   <ul>
-    <li><%= link_to gallery.title, gallery %></li>
-    <li><%= gallery.user_id %></li>
-    <li><%= gallery.user.email %></li>
+  	<li><%= link_to 'New Gallery', new_user_gallery_path(current_user) %></li>
+  	<li><%= link_to "All Images", user_images_url(current_user) %></li>
   </ul>
 <% end %>
-  <ul>
-    <li><%= link_to "New Gallery", new_user_gallery_path(current_user) %></li>
-  </ul>

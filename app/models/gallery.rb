@@ -9,4 +9,8 @@ class Gallery < ApplicationRecord
 
   has_many   :category_galleries, dependent: :destroy
   has_many   :categories, through: :category_galleries
+
+  def categories_images
+    categories.flat_map(&:images).uniq
+  end
 end
