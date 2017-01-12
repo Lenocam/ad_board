@@ -8,7 +8,7 @@
 		<% @images.each do |image| %>
 		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
 			<li>
-				<%= image_tag image %>
+				<%= image_tag image.file_url(:index).to_s %>
 			</li>
 			<li><%= link_to 'Show', image %></li>
 			<li><%= link_to 'Edit', edit_image_path(image) %></li>

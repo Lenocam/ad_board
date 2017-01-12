@@ -23,12 +23,14 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'pg'
 gem 'pundit'
 gem 'simple_form'
+
 group :development do
   gem 'better_errors'
   gem 'guard-bundler'
@@ -42,6 +44,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'rails_db'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
@@ -49,6 +52,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

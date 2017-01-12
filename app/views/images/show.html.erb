@@ -1,5 +1,5 @@
 <div class="image-show">
-	<%= image_tag(@image.file_url.to_s) %>
+	<%= image_tag(@image.file_url(:show).to_s) %>
 	<p>Start At: <%# @image.start_at %></p>
 	<p>End At:   <%# @image.end_at %></p>
 	<p><%=  %></p>
