@@ -8,13 +8,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
   </head>
-<body>
+<body id="<%= controller_name %>" class="<%= action_name %>">
   <header>
       <%= render 'layouts/navigation' %>
   </header>
   <main role="main">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <div id="wrapper">
+      <%= render 'layouts/sidebar' %>
+      <div id="page-content-wrapper">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    </div>
   </main>
 </body>
 </html>
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>
