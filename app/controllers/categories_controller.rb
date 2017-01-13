@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
-before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :all_categories, only: [:index, :create, :update, :destroy]
+  respond_to :html, :js
 
   def new
     @category = current_user.categories.build
@@ -8,22 +9,11 @@ before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def create
     @category = current_user.categories.create(category_params)
-    if @category.save!
-      respond_to do |format|
-        format.html
-        format.js
-      end
-
-    end
+    @category.save!
   end
 
   def update
-    if @category.update(category_params)
-      respond_to do |format|
-        format.html
-        format.js
-      end
-    end
+    @category.update(category_params)
   end
 
   def destroy
