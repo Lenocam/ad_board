@@ -60,6 +60,24 @@ class ImagesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def image_params
-    params.require(:image).permit(:file, :start_at, :end_at, category_ids: [])
+    allowed = params.require(:image).permit(:file, :start_at, :end_at, category_ids: [])
+
+    # Call to Create New Categories on update/new action of images
+    allowed[:category_ids] = clean_up_categories(allowed[:category_ids])
+    allowed
+  end
+
+  def clean_up_categories(categories)
+    valid_ids = []
+    categories.each do |cat|
+      next if cat.blank?
+      if Category.where(id: cat).any?
+        valid_ids << cat
+      else
+        new_cat = current_user.categories.create(name: cat)
+        valid_ids << new_cat.id
+      end
+    end
+    valid_ids
   end
 end

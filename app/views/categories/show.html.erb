@@ -16,7 +16,7 @@
 	<div class="flex-images">
 		<% @category.images.each do |image| %>
 		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-			<li class="item floating-box"><%= link_to image_tag(image, :file), image %></li>
+			<li class="item floating-box"><%= link_to image_tag(image.file_url(:show).to_s), image %></li>
 		</ul>
 		<% end %>
 	</div>

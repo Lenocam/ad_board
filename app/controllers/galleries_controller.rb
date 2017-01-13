@@ -44,10 +44,10 @@ class GalleriesController < ApplicationController
     #end
 
     def gallery_params
-    allowed = params.require(:gallery).permit(:title, category_ids: [])
-    allowed[:category_ids] = clean_up_categories(allowed[:category_ids])
-    allowed
-  end
+      allowed = params.require(:gallery).permit(:title, category_ids: [])
+      allowed[:category_ids] = clean_up_categories(allowed[:category_ids])
+      allowed
+    end
 
   def clean_up_categories(categories)
     valid_ids = []

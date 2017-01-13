@@ -2,8 +2,9 @@
 
 	<%= simple_form_for shallow_args(current_user, @image) do |f| %>
 	<%# render 'shared/error_messages', object: f.object %>
-	<%= f.label            :file %><br>
-	<%= f.file_field :file, multiple: true %>
+	<%= f.label        :file %><br>
+	<%= f.file_field   :file %>
+	<%= f.hidden_field :file_cache %>
 
 	<%# Assign Categories to Images %>
 

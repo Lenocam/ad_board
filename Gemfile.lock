@@ -72,6 +72,10 @@ GEM
       carrierwave (>= 0.8.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    chosen-rails (1.5.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     codemirror-rails (5.16.0)
       railties (>= 3.0, < 6.0)
     coderay (1.1.1)
@@ -324,6 +328,7 @@ DEPENDENCIES
   byebug
   capybara
   carrierwave-base64
+  chosen-rails
   coffee-rails (~> 4.2)
   database_cleaner
   devise

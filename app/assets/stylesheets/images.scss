@@ -1,3 +1,9 @@
 // Place all the styles related to the images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#images {
+	#image_category_ids {
+		width: 450px;
+	}
+}

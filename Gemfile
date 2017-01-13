@@ -13,6 +13,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'responders'
 gem 'carrierwave-base64'
 gem 'mini_magick'
+gem 'chosen-rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
