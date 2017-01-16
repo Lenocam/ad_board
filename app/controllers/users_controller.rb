@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def update
     authorize @user
     if @user.update_attributes(secure_params)
-      redirect_to users_path, :success => "User updated"
+      redirect_to users_path, :notice => "User updated"
     else
       redirect_to users_path, :alert => "Unable to update"
     end

@@ -18,7 +18,7 @@ class GalleriesController < ApplicationController
     @gallery = current_user.galleries.build(gallery_params)
     authorize @gallery
     if @gallery.save
-      flash[:success] = "Your gallery was successfully created."
+      flash[:notice] = "Your gallery was successfully created."
       redirect_to @gallery
     else
       flash[:alert] = "Your gallery must have a unique title."
@@ -26,22 +26,38 @@ class GalleriesController < ApplicationController
     end
   end
 
+  def edit
+    authorize @gallery
+  end
+
+  def update
+
+    if @gallery.update(gallery_params)
+      authorize @gallery
+      flash[:notice] = 'Gallery Updated'
+      redirect_to @gallery
+
+    end
+  end
+
   def show
     @gallery_images = @gallery.categories_images
+    authorize @gallery
     #@gallery_now = @gallery.now
     @categories = current_user.categories.all
     #respond_with(@categories)
+  end
+
+  def destroy
+    @gallery.destroy
     authorize @gallery
+    redirect_to user_galleries_url(current_user), notice: 'Gallery was successfully destroyed.'
   end
 
   private
     def set_gallery
       @gallery = Gallery.find(params[:id])
     end
-
-    #def gallery_params
-    #  params.require(:gallery).permit(:title, category_ids: [])
-    #end
 
     def gallery_params
       allowed = params.require(:gallery).permit(:title, category_ids: [])

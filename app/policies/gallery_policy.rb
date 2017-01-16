@@ -21,6 +21,14 @@ class GalleryPolicy < ApplicationPolicy
   end
 
   def edit?
-    @gallery.user == @current_user || @current_user.admin?
+    @current_user.admin? || @gallery.user == @current_user
+  end
+
+  def update?
+    @current_user.admin? || @gallery.user == @current_user
+  end
+
+  def destroy?
+    @current_user.admin? || @gallery.user == @current_user
   end
 end
