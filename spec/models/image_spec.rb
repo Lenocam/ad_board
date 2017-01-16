@@ -9,6 +9,9 @@ describe FileUploader do
   before do
     FileUploader.enable_processing = true
     File.open("#{Rails.root}/spec/support/images/image.png") { |f| uploader.store!(f) }
+    #File.open("#{Rails.root}/spec/support/images/image.gif") { |f| uploader.store!(f) }
+    #File.open("#{Rails.root}/spec/support/images/image.jpg") { |f| uploader.store!(f) }
+    #File.open("#{Rails.root}/spec/support/images/image.jpeg") { |f| uploader.store!(f) }
   end
 
   after do
@@ -37,9 +40,9 @@ describe FileUploader do
   it "makes the image readable only to the owner and not executable" do
     expect(uploader).to have_permissions(0600)
   end
-
+=end
   it "has the correct format" do
     expect(uploader).to be_format('png')
   end
-=end
+
 end
