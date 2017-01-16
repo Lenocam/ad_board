@@ -1,7 +1,8 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :all_categories, only: [:index, :create, :update, :destroy]
-  respond_to :html, :js
+  respond_to :js
 
   def new
     @category = current_user.categories.build
