@@ -14,3 +14,46 @@
  *= require_self
  *= require chosen
  */
+
+main {
+	background:transparent;
+}
+
+body {
+  background:white
+}
+
+ul {
+  list-style-type: none;
+}
+
+/*Experimenting with Flexbox*/
+
+div#page-content-wrapper {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: .5vw;
+	flex-flow: row wrap;
+}
+
+#page-content-wrapper div#row {
+	flex: auto;
+	width: 200px;
+	margin: .5vw;
+}
+
+#page-content-wrapper div#row img {
+	width: auto;
+	height: 200px;
+}
+
+img {
+	height: 200px;
+	margin: .5vw;
+}
+
+@media screen and (max-width: 400px) {
+	#page-content-wrapper img {margin:0;}
+	#page-content-wrapper {padding:0;}
+}

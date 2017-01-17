@@ -1,23 +1,30 @@
-<div id="image-index">
+<h1><%= current_user.name %>'s Images</h1>
+<% if false %>
 
-	<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="flex-images">
+	<% @images.each do |image| %>
+	<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+		<li><%= link_to image_tag(image.file_url(:index).to_s), image %></li>
+		<% if false %>
 
-	<h1><%= current_user.name %>'s Images</h1>
 
-	<div class="image_container">
-		<% @images.each do |image| %>
-		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-			<li>
-				<%= image_tag image.file_url(:index).to_s %>
-			</li>
-			<li><%= link_to 'Show', image %></li>
-			<li><%= link_to 'Edit', edit_image_path(image) %></li>
-			<li><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-		</ul>
+		<li><% link_to 'Show', image %></li>
+		<li><% link_to 'Edit', edit_image_path(image) %></li>
+		<li><% link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></li>
 		<% end %>
-	</div>
+	</ul>
+	<% end %>
+</div>
 
-	<br>
-	<div><%= link_to 'New Image', new_user_image_path %></div>
-	<div><%= link_to 'Back', :back %></div>
+<br>
+<ul>
+	<li><%= link_to 'New Image', new_user_image_path %></li>
+	<li><%= link_to 'Back', :back %></li>
+</ul>
+<% end %>
+<div class="row">
+	<% @images.each do |image| %>
+		<%= link_to image_tag(image.file_url(:index).to_s), image %>
+	<% end %>
 </div>

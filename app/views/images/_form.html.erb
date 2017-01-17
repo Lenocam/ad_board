@@ -56,8 +56,9 @@
 		<%= f.submit %>
 	</div>
 	<% end %>
+	<ul>
+		<li><%= link_to 'Dashboard', user_path(current_user) %></li>
+		<li><%= link_to 'Back', :back %></li>
+	</ul>
+
 </div>
-<ul>
-	<li><%= link_to 'Dashboard', user_path(current_user) %></li>
-	<li><%= link_to 'Back', :back %></li>
-</ul>
