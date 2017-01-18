@@ -15,35 +15,46 @@
  *= require chosen
  */
 
+@import 'color';
+
 main {
 	background:transparent;
 }
-
 body {
-  background:white
+	background: $dark-gray;
+
 }
 
 ul {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 /*Experimenting with Flexbox*/
 
 div#page-content-wrapper {
 	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	padding: .5vw;
-	flex-flow: row wrap;
+	//justify-content: center;
+	//flex-wrap: wrap;
+	//padding: .5vw;
+	//flex-flow: row wrap;
+	flex-direction: column;
 }
 
-#page-content-wrapper div#row {
+div#page-content-wrapper h1{
+	background:transparent;
+	padding: 10px;
+	margin: 0;
+	width: auto;
+	color:#9d9d9d;
+}
+
+#page-content-wrapper div.row {
 	flex: auto;
-	width: 200px;
+	width: 100%;
 	margin: .5vw;
 }
 
-#page-content-wrapper div#row img {
+#page-content-wrapper div.row img {
 	width: auto;
 	height: 200px;
 }
@@ -56,4 +67,12 @@ img {
 @media screen and (max-width: 400px) {
 	#page-content-wrapper img {margin:0;}
 	#page-content-wrapper {padding:0;}
+}
+
+body#images.index div#wrapper div#sidebar-wrapper ul.sidebar-nav:nth-child(5) a{
+	color: green;
+}
+
+.icon {
+	color:white;
 }
