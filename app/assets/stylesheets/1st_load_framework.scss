@@ -92,8 +92,12 @@ header {
   }
 }
 
-a#menu-toggle {
-  color: $light-gray;
+#menu-toggle {
+  color: $cyan;
+  &:hover {
+    color:$orange;
+    background:$very-dark-gray;
+  }
 }
 
 
