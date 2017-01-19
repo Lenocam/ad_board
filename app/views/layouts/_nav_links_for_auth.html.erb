@@ -1,6 +1,5 @@
 <% if user_signed_in? %>
-  <li><span aria-hidden="true" data-icon="&#xeae5;"></span>
-    <%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
   <li><%= link_to 'User Profile', user_path(current_user) %></li>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>

@@ -14,6 +14,7 @@ gem 'responders'
 gem 'carrierwave-base64'
 gem 'mini_magick'
 gem 'chosen-rails'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug', platform: :mri

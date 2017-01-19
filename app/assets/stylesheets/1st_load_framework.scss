@@ -96,30 +96,15 @@ a#menu-toggle {
   color: $light-gray;
 }
 
-span.glyphicon {
-  margin-left: 10px;
-}
-.dropdown-menu li a{
-  display: inline;
-  padding: 10px 10px;
-}
 
-.icon {
-	display: inline-block;
-	color: #444444;
-  width: 1em;
-	height: 1em;
-	fill: currentColor;
-}
-.icon-home {
-  /* Using currentColor above lets
-  us use `color` for changing the color
-  of our icons: */
-  color: red;
+//Dropdown Menu Navigation
 
-  /* The width and height of the SVG
-  was previously set to 1em.
-  This allows us to use `font-size`
-  to change the size of our icon: */
-  font-size: 48px;
+ul.dropdown-menu li {
+  i.fa {
+  margin-left:10px;
+  }
+  a {
+    padding: 10px 10px;
+    display: inline;
+  }
 }

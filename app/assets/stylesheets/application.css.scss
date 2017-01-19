@@ -14,8 +14,13 @@
  *= require_self
  *= require chosen
  */
-
+@import '1st_load_framework';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import 'color';
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 main {
 	background:transparent;
@@ -71,8 +76,4 @@ img {
 
 body#images.index div#wrapper div#sidebar-wrapper ul.sidebar-nav:nth-child(5) a{
 	color: green;
-}
-
-.icon {
-	color:white;
 }

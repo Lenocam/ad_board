@@ -3,7 +3,8 @@
     <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
     <ul class="dropdown-menu">
       <% if user_signed_in? %>
-        <li><span class="glyphicon glyphicon-cog"></span><%= link_to 'Edit account', edit_user_registration_path %></li>
+
+        <li><%= icon('user-o') %><%= link_to 'User Settings', edit_user_registration_path %></li>
       <% end %>
 
 
