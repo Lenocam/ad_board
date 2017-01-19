@@ -88,6 +88,4 @@ pickle-email-*.html
 
 
 # Ignore public images for development
-/public/uploads/image
-
-#I changed this tiny thing
+/public/uploads/image/file/**
