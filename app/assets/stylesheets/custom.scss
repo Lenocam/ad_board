@@ -1,0 +1,55 @@
+//Application Wide Styling
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'color';
+main {
+	//@extend .container;
+  //background-color: #eee;
+	background:transparent;
+	padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px; // accommodate the navbar
+}
+body {
+	background: black;
+}
+ul {
+	list-style-type: none;
+}
+
+/*Experimenting with Flexbox*/
+
+div#page-content-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+div#page-content-wrapper h1{
+	background:transparent;
+	padding: 10px;
+	margin: 0;
+	width: auto;
+  color: $light-gray;
+}
+
+#page-content-wrapper div.row {
+	flex: auto;
+	width: 100%;
+	margin: .5vw;
+}
+
+#page-content-wrapper div.row img {
+	width: auto;
+	height: 200px;
+}
+
+img {
+	height: 200px;
+	margin: .5vw;
+}
+/*
+@media screen and (max-width: 400px) {
+	#page-content-wrapper img {margin:0;}
+	#page-content-wrapper {padding:0;}
+}
+*/

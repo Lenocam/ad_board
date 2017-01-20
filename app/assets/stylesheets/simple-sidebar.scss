@@ -3,6 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import 'color';
 
 /* Toggle Styles */
 
@@ -14,6 +15,7 @@
     transition: all 0.5s ease;
 }
 
+/* Toggled means away */
 #wrapper.toggled {
     padding-left: 250px;
 }
@@ -33,6 +35,7 @@
     transition: all 0.5s ease;
 }
 
+/* Toggled means away */
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
 }
@@ -43,6 +46,7 @@
     padding: 15px;
 }
 
+/* Toggled means away */
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
@@ -67,7 +71,7 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color:$very-light-gray;
 }
 
 .sidebar-nav li a:hover {

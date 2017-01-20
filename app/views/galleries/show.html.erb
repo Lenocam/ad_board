@@ -7,28 +7,24 @@
     </p>
   <% end %>
 
+
   <ul>
     <li><%= link_to "User's Gallery", user_galleries_url(current_user) %></li>
     <li><%= link_to "New Gallery", new_user_gallery_path(current_user) %></li>
   </ul>
-<% end %>
-
-
+  <% end %>
 
 
 
 <% if true %>
-  <h3><%= @gallery.title %></h3>
+
 <div class="row">
-	<div class="flex-images">
-		<% @gallery_images.each do |image| %>
-		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-			<li class="item floating-box">
-				<%= link_to image_tag(image.file_url), image %>
-			</li>
-		</ul>
-		<% end %>
-	</div>
+  <h3><%= @gallery.title %></h3>
+
+	<% @gallery_images.each do |image| %>
+		<%= link_to image_tag(image.file_url), image %>
+	<% end %>
+
 </div><br>
 
 <% if false %>

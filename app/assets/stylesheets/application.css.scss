@@ -18,62 +18,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'color';
-
+@import "custom";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-main {
-	background:transparent;
-}
-body {
-	background: black;
-
-}
-
-ul {
-	list-style-type: none;
-}
-
-/*Experimenting with Flexbox*/
-
-div#page-content-wrapper {
-	display: flex;
-	//justify-content: center;
-	//flex-wrap: wrap;
-	//padding: .5vw;
-	//flex-flow: row wrap;
-	flex-direction: column;
-}
-
-div#page-content-wrapper h1{
-	background:transparent;
-	padding: 10px;
-	margin: 0;
-	width: auto;
-	color:#9d9d9d;
-}
-
-#page-content-wrapper div.row {
-	flex: auto;
-	width: 100%;
-	margin: .5vw;
-}
-
-#page-content-wrapper div.row img {
-	width: auto;
-	height: 200px;
-}
-
-img {
-	height: 200px;
-	margin: .5vw;
-}
-
-@media screen and (max-width: 400px) {
-	#page-content-wrapper img {margin:0;}
-	#page-content-wrapper {padding:0;}
-}
-
-body#images.index div#wrapper div#sidebar-wrapper ul.sidebar-nav:nth-child(5) a{
-	color: green;
-}

@@ -3,24 +3,15 @@
 @import "bootstrap";
 @import "color";
 
-// make all images responsive by default
-/*img {
-  @extend .img-responsive;
-  margin: 0 auto;
-}*/
-// override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-
-  }
-
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
 // to make views framework-neutral
+/*
 .column {
   @extend .col-md-6;
   @extend .text-center;
   }
+
 .form {
   @extend .col-md-6;
   }
@@ -28,24 +19,28 @@
   @extend .col-md-6;
   @extend .text-center;
   }
+
 .submit {
   @extend .btn;
   @extend .btn-primary;
   @extend .btn-lg;
   }
+
 // apply styles to HTML elements
 // to make views framework-neutral
+
 main {
-  @extend .container;
-  background-color: #eee;
+
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
+
 section {
   @extend .row;
   margin-top: 20px;
   }
+*/
 
 // Styles for form views
 // using Bootstrap 3
@@ -85,30 +80,70 @@ section {
 
 header {
   li a {
-    color: $light-gray;
+    color: $blue;
   }
   span {
     display: block;
   }
 }
 
+//Sign In Sign Up Navigation
+
+ul.nav.navbar-nav.navbar-right li {
+  padding-top:15px;
+  margin-right:15px;
+  i {
+  color:$light-gray;
+  &:hover {
+    color:#fff;
+  }
+  }
+  a {
+    padding-left:5px;
+    display: inline;
+
+  }
+}
+
 #menu-toggle {
+  border:$very-dark-gray;
+
   color: $cyan;
   &:hover {
     color:$orange;
-    background:$very-dark-gray;
+    background:$dark-gray;
+    border:$dark-gray;
   }
 }
 
 
 //Dropdown Menu Navigation
 
-ul.dropdown-menu li {
+button.btn.btn-default.navbar-btn.dropdown-toggle {
+  right: 15px;
+  i {
+    margin-left: 5px;
+  }
+}
+ul.dropdown-menu {
+  &:hover {
+
+  }
+  li {
+  &:hover{
+    background:$very-light-gray;
+    a {
+      background:$very-light-gray;
+    }
+  }
   i.fa {
   margin-left:10px;
   }
   a {
-    padding: 10px 10px;
+    padding-right:10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 5;
     display: inline;
   }
-}
+}}
