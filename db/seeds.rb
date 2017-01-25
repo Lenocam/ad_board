@@ -165,10 +165,6 @@ end
   user_id: Faker::Number.between(1, 25)
   )
   Image.create!(
-  file: File.new("/home/reed/Pictures/55MiEk4 - Imgur.gif"),
-  user_id: Faker::Number.between(1, 25)
-  )
-  Image.create!(
   file: File.new("/home/reed/Pictures/zwDWbYq.jpg"),
   user_id: Faker::Number.between(1, 25)
   )

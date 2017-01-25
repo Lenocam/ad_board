@@ -24,8 +24,10 @@ div#page-content-wrapper {
 	flex-direction: column;
 }
 
-div#page-content-wrapper h1{
-	background:transparent;
+div#page-content-wrapper h1, h2 {
+	display: flex;
+	justify-content: center;
+	background: transparent;
 	padding: 10px;
 	margin: 0;
 	width: auto;

@@ -1,4 +1,10 @@
 @import 'color';
+
+body#categories.index #page-content-wrapper div.row {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
 ul#categories-list {
   width: 400px;
   display:flex;

@@ -17,7 +17,7 @@
 		</div>
 	</div>
 <% end %>
-<h1>Categories</h1>
+<h1><%= current_user.name %>'s Categories</h1>
 <div class="row">
 	<ul class="list-group" id="categories-list"><%= render @categories %></ul>
 	<div class="row">
