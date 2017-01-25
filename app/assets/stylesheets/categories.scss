@@ -16,6 +16,16 @@ ul#categories-list {
     background:#fff;
     border:#fff;
     justify-content:space-between;
+		a {
+			color:$very-dark-gray;
+			&:hover {
+				color:$purple;
+			}
+		}
+
+		span.button-groupyiness a {
+			color:$very-dark-gray;
+		}
 
 
   }

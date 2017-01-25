@@ -8,7 +8,9 @@
 
       <li><%= icon('user-o') %><%= link_to 'User Profile', user_path(current_user) %></li>
       <li><%= icon('cogs') %><%= link_to 'User Settings', edit_user_registration_path %></li>
+
       <li role="separator" class="divider"></li>
+
       <li><%= icon('sign-out') %><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 
 
