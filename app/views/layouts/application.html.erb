@@ -3,10 +3,12 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Ad Board" %></title>
+    <%= favicon_link_tag 'favicon-image-black.ico' %>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ad Board" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
+
   </head>
 <body id="<%= controller_name %>" class="<%= action_name %>">
   <header>
@@ -29,5 +31,8 @@
   </script>
 
 </body>
+
+
+
 
 </html>

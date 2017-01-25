@@ -253,6 +253,78 @@ end
     user_id: Faker::Number.between(1, 25)
   )
   Image.create!(
-    file: File.new("/home/reed/Pictures/th (1).jpg"),
+    file: File.new("/home/reed/Pictures/01-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/02-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/03-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/04-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/05-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/06-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/07-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/08-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/09-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/10-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/11-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/12-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/13-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/14-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/72-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/73-usersthink-stock-image-small.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/76-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/82-usersthink-stock-image.jpg"),
+    user_id: Faker::Number.between(1, 25)
+  )
+  Image.create!(
+    file: File.new("/home/reed/Pictures/91-usersthink-stock-image-small.jpg"),
     user_id: Faker::Number.between(1, 25)
   )

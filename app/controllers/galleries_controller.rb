@@ -31,12 +31,10 @@ class GalleriesController < ApplicationController
   end
 
   def update
-
     if @gallery.update(gallery_params)
       authorize @gallery
       flash[:notice] = 'Gallery Updated'
       redirect_to @gallery
-
     end
   end
 

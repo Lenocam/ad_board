@@ -1,12 +1,17 @@
 <div class="image-show">
+
 	<%= image_tag(@image.file_url(:show).to_s) %>
-	<p>Start At: <%# @image.start_at %></p>
-	<p>End At:   <%# @image.end_at %></p>
-	<p><%=  %></p>
-	<br>
-	<%= link_to 'Edit', edit_image_path(@image) %>
-	|
-	<%= link_to 'Back', :back %>
-	|
-	<%= link_to 'Delete This Image', @image, method: :delete, data: { confirm: "Think about it, do you really want it to end this way?"} %>
+	<% if false %>
+
+	
+		<p>Start At: <%# @image.start_at %></p>
+		<p>End At:   <%# @image.end_at %></p>
+		<p><%=  %></p>
+		<br>
+		<%= link_to 'Edit', edit_image_path(@image) %>
+		|
+		<%= link_to 'Back', :back %>
+		|
+		<%= link_to 'Delete This Image', @image, method: :delete, data: { confirm: "Think about it, do you really want it to end this way?"} %>
+	<% end %>
 </div>

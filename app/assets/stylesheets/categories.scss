@@ -1,0 +1,19 @@
+@import 'color';
+ul#categories-list {
+  width: 400px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:#fff;
+  li {
+    display:flex;
+    background:#fff;
+    border:#fff;
+    justify-content:space-between;
+
+
+  }
+}
+#category-delete {
+  background:$red;
+}

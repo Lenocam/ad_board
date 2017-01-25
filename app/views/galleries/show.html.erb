@@ -1,64 +1,27 @@
-<% if false %>
-  <h3><%= @gallery.title %></h3>
-  <li>Gallery Owner: <%= @gallery.user.email %></li>
-  <% if current_user.admin? %>
-    <p>
-      You are signed in as: <b><%= current_user.email %></b> Admin
-    </p>
-  <% end %>
-
-
-  <ul>
-    <li><%= link_to "User's Gallery", user_galleries_url(current_user) %></li>
-    <li><%= link_to "New Gallery", new_user_gallery_path(current_user) %></li>
-  </ul>
-  <% end %>
-
-
-
 <% if true %>
-
-<div class="row">
   <h3><%= @gallery.title %></h3>
-
-	<% @gallery_images.each do |image| %>
-		<%= link_to image_tag(image.file_url), image %>
-	<% end %>
-
-</div><br>
-
-<% if false %>
-  <h4><%= @gallery.title %>
-  	<big>NOW</big>
-  </h4>
-
   <div class="row">
-  	<div class="flex-images">
-  		<% @gallery_now.each do |image| %>
-  		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-  			<li class="item floating-box">
-  				<%= link_to attachment_image_tag(image, :file), image %>
-  			</li>
-  		</ul>
-  		<% end %>
-  	</div>
-  </div><br>
-  <ul>
+    <% @gallery_images.each do |image| %>
+    <div class="image" data-toggle="modal" data-target=".bs-example-modal-lg">
+      <%= link_to image_tag(image.file_url) %>
+    </div>
+  <% end %>
 <% end %>
 
-	<% @gallery.categories.each do |c| %>
-	<li><%= c.id %></li>
-	<li><%= c.name %></li>
-	<% end %>
-
-</ul>
-
-</ul>
-<ul>
-	<li><%= link_to  current_user.name.capitalize + "'s Galleries", user_galleries_url(current_user) %></li>
-	<li><%= link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?'} %></li>
-	<li><%= link_to "Edit Gallery", edit_gallery_path %></li>
-	<li><%= link_to 'New Gallery', new_user_gallery_path(current_user) %></li>
-	<li><%= link_to "Back", :back %></li>
-</ul>
+<% if false %>
+  <div class="row">
+    <ul>
+    	<% @gallery.categories.each do |c| %>
+      	<li><%= c.id %></li>
+      	<li><%= c.name %></li>
+    	<% end %>
+    </ul>
+  </div>
+  <ul>
+  	<li><%= link_to  current_user.name.capitalize + "'s Galleries", user_galleries_url(current_user) %></li>
+  	<li><%= link_to 'Destroy', @gallery, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+  	<li><%= link_to "Edit Gallery", edit_gallery_path %></li>
+  	<li><%= link_to 'New Gallery', new_user_gallery_path(current_user) %></li>
+  	<li><%= link_to "Back", :back %></li>
+  </ul>
 <% end %>

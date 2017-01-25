@@ -100,7 +100,7 @@
     background: none;
 }
 
-@media(min-width:768px) {
+//@media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
     }
@@ -120,10 +120,24 @@
     #page-content-wrapper {
         padding: 20px;
         position: relative;
+        display: flex;
+        justify-content:center;
+        div.row {
+        display: flex;
+        flex-wrap:wrap;
+        //justify-content:center;
+        justify-content:flex-start;
+      }
+
+
     }
 
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+        div.row {
+        display: flex;
+        flex-wrap:wrap;
+      }
     }
-}
+//}

@@ -15,9 +15,12 @@
  *= require chosen
  */
 @import '1st_load_framework';
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import 'color';
 @import "custom";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'navigation_top';
+@import 'visitors';

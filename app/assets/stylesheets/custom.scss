@@ -3,7 +3,7 @@
 @import "bootstrap";
 @import 'color';
 main {
-	//@extend .container;
+	@extend .container;
   //background-color: #eee;
 	background:transparent;
 	padding-bottom: 80px;
@@ -29,27 +29,71 @@ div#page-content-wrapper h1{
 	padding: 10px;
 	margin: 0;
 	width: auto;
-  color: $light-gray;
+  color: $cyan;
 }
 
-#page-content-wrapper div.row {
-	flex: auto;
+div#page-content-wrapper div.row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
 	width: 100%;
 	margin: .5vw;
+
 }
 
-#page-content-wrapper div.row img {
-	width: auto;
-	height: 200px;
-}
-
-img {
-	height: 200px;
+div#page-content-wrapper div.row div.image {
+	width: 150px;
+	height: 150px;
 	margin: .5vw;
+
 }
-/*
-@media screen and (max-width: 400px) {
-	#page-content-wrapper img {margin:0;}
-	#page-content-wrapper {padding:0;}
+
+/*Image and Gallery image overlay buttons*/
+
+.image {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.9s ease;
+  margin: 0 auto;
 }
-*/
+
+.image {
+  display:flex;
+  justify-content: flex-start;
+  &:hover .overlay {
+    height: 20%;
+  }
+  &:hover .overlay-button  {
+    height: 100%;
+  }
+}
+
+
+.overlay {
+  display: flex;
+  justify-content:flex-end;
+  //background:rgba(40, 42, 46, 0.3);
+	background:transparent;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  height: 0;
+  z-index: 9;
+  transition: all 0.9s ease;
+}
+
+.overlay-button {
+  display: flex;
+  background:$very-dark-gray;
+  border:$very-dark-gray;
+
+  position: relative;
+  bottom: 0;
+	right: 0;
+  height: 0;
+  z-index: 10;
+  transition: all 0.9s ease;
+  a {
+    color:$cyan;
+  }
+}

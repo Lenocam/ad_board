@@ -1,0 +1,13 @@
+@import 'color';
+
+body#galleries div#page-content-wrapper div.row div.image {
+	width: auto;
+	height: 200px;
+	margin: .5vw;
+  img {
+    height: 200px;
+    width: auto;
+  }
+
+
+}

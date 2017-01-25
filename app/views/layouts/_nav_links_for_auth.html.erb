@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+  <%= render 'layouts/action_dropdown' %>
   <%= render 'layouts/dropdown' %>
 <% else %>
   <li><%= link_to icon('sign-in', "Sign-In"),  new_user_session_path %></li>
