@@ -1,0 +1,6 @@
+<div id="category-form">
+	<%= simple_form_for shallow_args(current_user, @category), remote: true do |f| %>
+		<%= f.input :name %>
+		<%= f.button :submit, "Add" %>
+	<% end %>
+</div>

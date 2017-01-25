@@ -1,17 +1,16 @@
-<h1><%= current_user.email %>'s Galleries</h1>
-<% if true %>
-  <ul>
-    <li>You are signed in as: <b><%= current_user.email %></b> Admin</li>
-  </ul>
-<% end %>
+<h1><%= current_user.name %>'s Galleries</h1>
+<div class="row">
+	<% @galleries.each do |gallery| %>
+		<% unless gallery.categories_images.empty? %>
+    <div class="image">
+      <%= link_to image_tag(gallery.categories_images.first.file_url), gallery %>
+      <div class="overlay">
+        <button type="button" name="edit" class="overlay-button"><%= link_to 'Edit', edit_gallery_path(gallery) %></button>
 
-<% (current_user.galleries).each do |gallery| %>
-  <ul>
-    <li><%= link_to gallery.title, gallery %></li>
-    <li><%= gallery.user_id %></li>
-    <li><%= gallery.user.email %></li>
-  </ul>
-<% end %>
-  <ul>
-    <li><%= link_to "New Gallery", new_user_gallery_path(current_user) %></li>
-  </ul>
+        <button type="button" name="delete" class="overlay-button"><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+
+      </div>
+    </div>
+		<% end %>
+	<% end %>
+</div>

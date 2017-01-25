@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, shallow: true do
     resources :galleries
     resources :images
+    resources :categories
   end
 
   #match "*path", :to => "application#routing_error", via: :all
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
         resources :users, shallow: true do
           resources :galleries
           resources :images
+          resources :categories
         end
       end
     end

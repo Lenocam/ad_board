@@ -19,4 +19,16 @@ class GalleryPolicy < ApplicationPolicy
   def new?
     true
   end
+
+  def edit?
+    @current_user.admin? || @gallery.user == @current_user
+  end
+
+  def update?
+    @current_user.admin? || @gallery.user == @current_user
+  end
+
+  def destroy?
+    @current_user.admin? || @gallery.user == @current_user
+  end
 end

@@ -1,0 +1,32 @@
+.old-tv-screen {
+  box-sizing: content-box;
+  width: 500px;
+  height: 350px;
+  position: relative;
+  margin: 20px 0;
+  border: none;
+  border-radius: 50% / 10%;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: white;
+  text-align: center;
+  text-indent: 0.1em;
+  text-overflow: clip;
+  background: #1abc9c;
+}
+
+.old-tv-screen::before {
+  box-sizing: content-box;
+  position: absolute;
+  content: "";
+  top: 10%;
+  right: -5%;
+  bottom: 10%;
+  left: -5%;
+  border: none;
+  border-radius: 5% / 50%;
+  font: normal 100%/normal Arial, Helvetica, sans-serif;
+  color: rgba(0,0,0,1);
+  text-overflow: clip;
+  background: #1abc9c;
+  text-shadow: none;
+}

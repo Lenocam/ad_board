@@ -1,8 +1,7 @@
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
-  <li><%= link_to 'User Profile', user_path(current_user) %></li>
+  <%= render 'layouts/action_dropdown' %>
+  <%= render 'layouts/dropdown' %>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li><%= link_to icon('sign-in', "Sign-In"),  new_user_session_path %></li>
+  <li><%= link_to icon('user-plus', 'Sign-Up'), new_user_registration_path %></li>
 <% end %>

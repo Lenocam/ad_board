@@ -1,18 +1,20 @@
 class ApplicationController < ActionController::Base
   include Pundit
+  #before_action :authenticate_user!
   protect_from_forgery with: :exception
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   rescue_from ActionController::RedirectBackError, with: :redirect_back_exception
-  rescue_from ActionView::MissingTemplate, with: :redirect_missing_template
+  #rescue_from ActionView::MissingTemplate, with: :redirect_missing_template
   #rescue_from ActionController::RoutingError, with: :record_not_found
 
 
 
   private
-    def user_not_authorized
-      flash[:alert] = "Access denied. You are not authorized to enter"
-      redirect_to (request.referrer || root_path)
+    def user_not_authorized(exception)
+      policy_name = exception.policy.class.to_s.underscore
+      flash[:warning] = t "#{policy_name}.#{exception.query}", scope: "pundit", default: :default
+      redirect_to(request.referrer || root_path)
     end
 
     def record_not_found

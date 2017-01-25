@@ -1,0 +1,64 @@
+<div class="form-group">
+
+	<%= simple_form_for shallow_args(current_user, @image) do |f| %>
+	<%# render 'shared/error_messages', object: f.object %>
+	<%= f.label        :file %><br>
+	<%= f.file_field   :file %>
+	<%= f.hidden_field :file_cache %>
+
+	<%# Assign Categories to Images %>
+
+	<div class="row">
+		<%= f.label :category_ids, "Categories" %><br>
+		<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true }  %>
+	</div>
+
+	<%# Set Dates %>
+
+	<div class="container">
+		<%# Assign start_at date to image %>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="form-group">
+
+					<div class="checkbox-inline">
+						<input type="checkbox" id="awakeStartSelect"/>
+						<%# label_tag :start_at, 'Choose Start Date' %>
+						<div class="input-group date" id="datetimepicker">
+							<%# f.text_field :start_at, class: 'form-control', value: @image.start_at.try(:strftime, "%m/%d/%Y %I:%M %p") %>
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<%# Assign end_at date to image %>
+			<div class="col-sm-4">
+				<div class="form-group">
+					<div class="checkbox-inline">
+						<input type="checkbox" id="awakeEndSelect"/>
+						<%# label_tag :end_at, 'Choose End Date' %>
+						<div class="input-group date" id="datetimepicker1">
+							<<%#  %>%= f.text_field :end_at, class: 'form-control', value: @image.end_at.try(:strftime, "%m/%d/%Y %I:%M %p") %>
+							<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<% end %>
+	<ul>
+		<li><%= link_to 'Dashboard', user_path(current_user) %></li>
+		<li><%= link_to 'Back', :back %></li>
+	</ul>
+
+</div>

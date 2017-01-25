@@ -1,0 +1,101 @@
+//Application Wide Styling
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'color';
+main {
+	@extend .container;
+  //background-color: #eee;
+	background:transparent;
+	padding-bottom: 80px;
+  width: 100%;
+  margin-top: 51px; // accommodate the navbar
+}
+body {
+	background: black;
+}
+ul {
+	list-style-type: none;
+}
+
+/*Experimenting with Flexbox*/
+
+div#page-content-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+div#page-content-wrapper h1, h2 {
+	display: flex;
+	justify-content: center;
+	background: transparent;
+	padding: 10px;
+	margin: 0;
+	width: auto;
+  color: $cyan;
+}
+
+div#page-content-wrapper div.row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 100%;
+	margin: .5vw;
+
+}
+
+div#page-content-wrapper div.row div.image {
+	width: 150px;
+	height: 150px;
+	margin: .5vw;
+
+}
+
+/*Image and Gallery image overlay buttons*/
+
+.image {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.9s ease;
+  margin: 0 auto;
+}
+
+.image {
+  display:flex;
+  justify-content: flex-start;
+  &:hover .overlay {
+    height: 20%;
+  }
+  &:hover .overlay-button  {
+    height: 100%;
+  }
+}
+
+
+.overlay {
+  display: flex;
+  justify-content:flex-end;
+  //background:rgba(40, 42, 46, 0.3);
+	background:transparent;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+  height: 0;
+  z-index: 9;
+  transition: all 0.9s ease;
+}
+
+.overlay-button {
+  display: flex;
+  background:$very-dark-gray;
+  border:$very-dark-gray;
+
+  position: relative;
+  bottom: 0;
+	right: 0;
+  height: 0;
+  z-index: 10;
+  transition: all 0.9s ease;
+  a {
+    color:$cyan;
+  }
+}

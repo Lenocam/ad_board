@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= @category.name %></h3>
+<%= link_to 'Edit', edit_category_path(@category) %>
+
+<h3>Galleries with Category</h3><br>
+<% @category.galleries.each do |g| %>
+<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+	<li><%= link_to g.title, g %></li>
+</ul>
+
+<% end %>
+
+<h3>Category Images</h3><br>
+<div class="row">
+	<div class="flex-images">
+		<% @category.images.each do |image| %>
+		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
+			<li class="item floating-box"><%= link_to image_tag(image.file_url(:show).to_s), image %></li>
+		</ul>
+		<% end %>
+	</div>
+</div>

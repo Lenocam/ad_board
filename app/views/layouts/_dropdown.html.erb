@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%="#{current_user.name}" %><%= icon('caret-down') %></button>
+    <ul class="dropdown-menu">
+      <% if user_signed_in? && current_user.admin? %>
+        <li><%= icon('unlock') %><%= link_to "Admin", users_path %></li>
+      <% end %>
+
+      <li><%= icon('user-o') %><%= link_to 'User Profile', user_path(current_user) %></li>
+      <li><%= icon('cogs') %><%= link_to 'User Settings', edit_user_registration_path %></li>
+      <li role="separator" class="divider"></li>
+      <li><%= icon('sign-out') %><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+
+
+    </ul>
+
+  </div>
+<% end %>

@@ -14,6 +14,10 @@ class UserPolicy < ApplicationPolicy
     @current_user.admin? || @current_user == @user
   end
 
+  def edit?
+    @current_user.admin? || @current_user == @user
+  end
+
   def update?
     @current_user.admin?
   end
