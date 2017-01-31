@@ -4,6 +4,6 @@ $("ul.errors").html("")
     $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
   <% end %>
 <% else %>
-  $(".gallery-index").html("<%= j (render 'gallery') %>")
+  $("#galleries-list").prepend("<%= j render @gallery %>")
   $("#gallery-modal").modal("hide")
 <% end %>

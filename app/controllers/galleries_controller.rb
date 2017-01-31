@@ -6,14 +6,12 @@ class GalleriesController < ApplicationController
   #after_action :verify_authorized, except: :index
   #after_action :verify_policy_scoped, only: :index
   respond_to :js
-=begin
+
   def index
-    @galleries = policy_scope(Gallery)
-    @galleries = current_user.galleries.all
-    @gallery = current_user.galleries.build(gallery_params)
-    @gallery_images = @gallery.categories_images
+    #@galleries = policy_scope(Gallery)
+    #@gallery_images = @gallery.categories_images
   end
-=end
+
   def new
     @gallery = current_user.galleries.build
     #authorize @gallery
@@ -21,22 +19,9 @@ class GalleriesController < ApplicationController
 
   def create
     @gallery = current_user.galleries.create(gallery_params)
-    #@gallery.save
+    #@gallery.save!
 
     #authorize @gallery
-    #@gallery =current_user.galleries.create(gallery_params)
-=begin
-    @gallery = current_user.galleries.build(gallery_params)
-    @gallery.save
-    authorize @gallery
-    if @gallery.save
-      flash[:notice] = "Your gallery was successfully created."
-      redirect_to @gallery
-    else
-      flash[:alert] = "Your gallery must have a unique title."
-      render :new
-    end
-=end
   end
 
   def edit
@@ -44,12 +29,14 @@ class GalleriesController < ApplicationController
   end
 
   def update
-    #@gallery.update(gallery_params)
+    @gallery.update(gallery_params)
+=begin
     if @gallery.update(gallery_params)
       authorize @gallery
       flash[:notice] = 'Gallery Updated'
       redirect_to @gallery
     end
+=end
   end
 
   def show
@@ -60,10 +47,17 @@ class GalleriesController < ApplicationController
     #respond_with(@categories)
   end
 
+  def delete
+    @gallery = Gallery.find(params[:gallery_id])
+
+  end
+
   def destroy
+    @galleries = Gallery.all
+    @gallery = Gallery.find(params[:id])
     @gallery.destroy
     #authorize @gallery
-    redirect_to user_galleries_url(current_user), notice: 'Gallery was successfully destroyed.'
+    #redirect_to user_galleries_url(current_user), notice: 'Gallery was successfully destroyed.'
   end
 
   private

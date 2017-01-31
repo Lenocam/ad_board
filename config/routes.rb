@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   devise_for :users, path: 'accounts', :controllers => { registrations: 'registrations'}
   resources :users, shallow: true do
-    resources :galleries
+    resources :galleries do
+      get "delete"
+    end
     resources :images
     resources :categories
   end
