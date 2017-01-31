@@ -2,8 +2,8 @@
   <h2><%= @gallery.title %></h2>
   <div class="row">
     <% @gallery_images.each do |image| %>
-    <div class="image" data-toggle="modal" data-target=".bs-example-modal-lg">
-      <%= link_to image_tag(image.file_url) %>
+    <div class="image" >
+      <%= link_to image_tag(image.file_url), image %>
     </div>
   <% end %>
 <% end %>

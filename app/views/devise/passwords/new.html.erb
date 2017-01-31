@@ -1,4 +1,7 @@
 <div class="authform">
+  <%= link_to :back, :class => 'nav-icon close' do %>
+    <span class="fa fa-times"></span>
+  <% end %>
   <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form'}) do |f| %>
     <h3>Forgot your password?</h3>
     <p>We'll send password reset instructions.</p>

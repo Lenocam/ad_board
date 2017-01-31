@@ -5,7 +5,6 @@
 
 $(document).on "turbolinks:load", ->
 
-  $('#image_category_ids').chosen({
-  		no_results_text: "No result found. Press enter to add..."
-  		search_contains: true
-  		});
+  $('#image_category_ids').chosen
+		no_results_text: "No result found. Press enter to add..."
+		search_contains: true

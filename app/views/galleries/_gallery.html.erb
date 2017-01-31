@@ -1,0 +1,23 @@
+<% @galleries.each do |gallery| %>
+  <% if gallery.categories_images.empty? %>
+    <div class="image">
+      <div class="image-placeholder">
+        <h3><%= gallery.title %></h3>
+        <p>You want to add some pictures to that Gallery?</p>
+      </div>
+      <div class="overlay">
+        <button type="button" name="edit" class="overlay-button"><%= link_to 'Edit', edit_gallery_path(gallery) %></button>
+        <button type="button" name="delete" class="overlay-button"><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      </div>
+    </div>
+  <% else %>
+    <div class="image">
+      <%= link_to image_tag(gallery.categories_images.first.file_url), gallery %>
+      <div class="overlay">
+        <button type="button" name="edit" class="overlay-button"><%= link_to 'Edit', edit_gallery_path(gallery) %></button>
+        <button type="button" name="delete" class="overlay-button"><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
+      </div>
+    </div>
+
+  <% end %>
+<% end %>

@@ -11,13 +11,13 @@ main {
   margin-top: 51px; // accommodate the navbar
 }
 body {
-	background: black;
+	background: $shark-grey;
 }
 ul {
 	list-style-type: none;
 }
 
-/*Experimenting with Flexbox*/
+/*Flexbox for pages*/
 
 div#page-content-wrapper {
 	display: flex;
@@ -26,6 +26,7 @@ div#page-content-wrapper {
 
 div#page-content-wrapper h1, h2 {
 	display: flex;
+	flex-flow: row nowrap;
 	justify-content: center;
 	background: transparent;
 	padding: 10px;
@@ -53,21 +54,26 @@ div#page-content-wrapper div.row div.image {
 /*Image and Gallery image overlay buttons*/
 
 .image {
+
   position: relative;
   overflow: hidden;
   transition: all 0.9s ease;
   margin: 0 auto;
+	border-radius: 2%;
 }
 
 .image {
+
   display:flex;
   justify-content: flex-start;
+
   &:hover .overlay {
     height: 20%;
   }
   &:hover .overlay-button  {
     height: 100%;
   }
+
 }
 
 

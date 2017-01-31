@@ -8,7 +8,16 @@ header {
   span {
     display: block;
   }
+  .navbar > .container-fluid .navbar-brand {
+    color:$astral-blue;
+    &:hover {
+      color:white;
+    }
+  }
+
 }
+
+
 
 //Sign In Sign Up Navigation
 ul.nav.navbar-nav.navbar-right li {
@@ -28,13 +37,14 @@ ul.nav.navbar-nav.navbar-right li {
 }
 //Side-bar Toggle button
 #menu-toggle {
-  border:$very-dark-gray;
+  border: 1px $very-dark-gray;
+  padding: 15px;
 
-  color: $cyan;
+  color: $shake-spear-blue;
   &:hover {
-    color:$orange;
+    color:$mandy-the-sea-red;
     background:$dark-gray;
-    border:$dark-gray;
+    border:$light-gray;
   }
 }
 

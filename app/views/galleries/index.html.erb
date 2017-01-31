@@ -1,21 +1,37 @@
 <h1><%= current_user.name %>'s Galleries</h1>
-<div class="row">
-	<% @galleries.each do |gallery| %>
-		<% unless gallery.categories_images.empty? %>
-    <div class="image">
-      <%= link_to image_tag(gallery.categories_images.first.file_url), gallery %>
-      <div class="overlay">
-        <button type="button" name="edit" class="overlay-button"><%= link_to 'Edit', edit_gallery_path(gallery) %></button>
-
-        <button type="button" name="delete" class="overlay-button"><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-
-      </div>
-    </div>
-
-
-		<% end %>
-	<% end %>
-	<div class="image">
-		<%= button_to "New Gallery", new_user_gallery_path(current_user), method: :get, remote: true, class: "placeholder"%>
+  <div class="row">
+		<%= link_to "new gallery", new_user_gallery_path, remote: true, class: "btn btn-primary" %>
 	</div>
+<div class="row gallery-index" id="galleries-list">
+	<%= render "gallery" %>
 </div>
+<div id="gallery-modal" class="modal fade"></div>
+
+
+
+<% if false %>
+  <!-- Modal Gallery Form-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Create a Gallery</h4>
+
+
+	      </div>
+	      <div class="modal-body">
+	        <%= render "form" %>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+<% end %>
+<% if false %>
+  <div class="image">
+		<button type="button" class="fa fa-television placeholder">
+			<%= link_to "New Gallery", new_user_gallery_path, remote: true %>
+		</button>
+	</div>
+<% end %>

@@ -1,35 +1,9 @@
-<% if false %>
-  <% form_for shallow_args(current_user, @gallery) do |f| %>
-    <div class="field">
-      <%= f.label      :title %>
-      <%= f.text_field :title %>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
+<%= simple_form_for shallow_args(current_user, @gallery), remote: true do |f| %>
+<ul class="errors"></ul>
+	<%= f.input :title %>
+		<%= f.label :category_ids, "Categories" %><br>
+		<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true } %>
 
-    </div>
-
-  <% end %>
+	<%= f.button :submit, "Add" %>
+	<%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
 <% end %>
-
-<%= form_for shallow_args(current_user, @gallery) do |f| %>
-<%# render 'shared/error_messages', object: f.object %>
-	<div class="field">
-		<%= f.label      	     :title %><br>
-		<%= f.text_field 	     :title %>
-	</div>
-	<div class="form-group">
-		<div class="row">
-			<%= f.label :category_ids, "Categories" %><br>
-			<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true }  %>
-		</div>
-
-	</div>
-	<div class="actions">
-		<%= f.submit %>
-	</div>
-<% end %>
-<ul>
-	<li><%= link_to 'Dashboard', user_path(current_user) %></li>
-	<li><%= link_to 'Back', :back %></li>
-</ul>

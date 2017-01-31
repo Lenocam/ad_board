@@ -16,9 +16,12 @@
   </header>
   <main role="main">
     <div id="wrapper" class="toggled">
-      <%= render 'layouts/sidebar' %>
+
+
+    <%= render 'layouts/sidebar' %>
       <div id="page-content-wrapper">
         <%= render 'layouts/messages' %>
+
         <%= yield %>
       </div>
     </div>

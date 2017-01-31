@@ -1,6 +1,8 @@
 <h1>Editing Image</h1>
-
-<%= image_tag(@image) %><br>
+<div class="image">
+  <%= image_tag(@image.file_url(:index).to_s) %>
+</div>
+<br>
 
 <%= render 'form' %>
 
