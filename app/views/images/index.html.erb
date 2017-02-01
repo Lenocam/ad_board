@@ -1,16 +1,8 @@
 <h1><%= current_user.name %>'s Images</h1>
 <div class="row">
-	<% @images.each do |image| %>
-
-	<div class="image">
-	  <%= link_to image_tag(image.file_url(:index).to_s), image %>
-	  <div class="overlay">
-	  	<button type="button" name="edit" class="overlay-button"><%= link_to 'Edit', edit_image_path(image) %></button>
-	  	<button type="button" name="delete" class="overlay-button"><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></button>
-	  </div>
-	</div>
-
-	 <% end %>
- </div>
-<li><%= link_to 'Back', :back %></li>
+	<%= link_to "new image", new_user_image_path, remote: true, class: "btn btn-primary" %>
 </div>
+<div class="row image-index" id="images-list">
+	<%= render @images %>
+</div>
+<div id="image-modal" class="modal fade"></div>

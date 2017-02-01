@@ -1,0 +1,9 @@
+$("ul.errors").html("")
+<% if @image.errors.any? %>
+  <% @image.errors.full_messages.each do |message| %>
+    $("ul.errors").append($("<li />").html("<%= message.html_safe %>"))
+  <% end %>
+<% else %>
+  $("#images-list").prepend("<%= j render @image %>")
+  $("#image-modal").modal("hide")
+<% end %>

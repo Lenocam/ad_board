@@ -1,1 +1,2 @@
-<%= render "save" %>
+$("#galleries_<%= @gallery.id %>").replaceWith("<%= j render @gallery %>")
+$("#gallery-modal").modal("hide")

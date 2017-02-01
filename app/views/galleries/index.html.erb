@@ -3,7 +3,6 @@
 		<%= link_to "new gallery", new_user_gallery_path, remote: true, class: "btn btn-primary" %>
 	</div>
 <div class="row gallery-index" id="galleries-list">
-	<%# render "gallery" %>
   <%= render @galleries %>
 </div>
 <div id="gallery-modal" class="modal fade"></div>

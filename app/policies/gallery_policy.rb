@@ -31,4 +31,8 @@ class GalleryPolicy < ApplicationPolicy
   def destroy?
     @current_user.admin? || @gallery.user == @current_user
   end
+
+  def delete?
+    @gallery.user == @current_user || @current_user.admin?
+  end
 end

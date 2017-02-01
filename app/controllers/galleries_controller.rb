@@ -1,47 +1,45 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_gallery, only: [:show, :edit, :update, :destroy]
-  before_action :all_galleries, only: [:index, :create, :update, :destroy] #added for ajax
+  before_action :all_galleries, only: [:index, :create, :update, :destroy]
   before_action :all_images
-  #after_action :verify_authorized, except: :index
+  after_action :verify_authorized, except: :index
   #after_action :verify_policy_scoped, only: :index
   respond_to :js
 
   def index
+    @galleries = current_user.galleries.order(updated_at: :desc)
     #@galleries = policy_scope(Gallery)
     #@gallery_images = @gallery.categories_images
   end
 
   def new
     @gallery = current_user.galleries.build
-    #authorize @gallery
+    authorize @gallery
   end
 
   def create
     @gallery = current_user.galleries.create(gallery_params)
-    #@gallery.save!
-
-    #authorize @gallery
+    authorize @gallery
   end
 
   def edit
-    #authorize @gallery
+    authorize @gallery
   end
 
   def update
     @gallery.update(gallery_params)
-=begin
-    if @gallery.update(gallery_params)
-      authorize @gallery
-      flash[:notice] = 'Gallery Updated'
-      redirect_to @gallery
+    respond_to do |f|
+      f.html { redirect_to galleries_url }
+      f.js
     end
-=end
+    redirect_to user_galleries_url(current_user), notice: 'Gallery Updated'
+    authorize @gallery
   end
 
   def show
     @gallery_images = @gallery.categories_images
-    #authorize @gallery
+    authorize @gallery
     #@gallery_now = @gallery.now
     @categories = current_user.categories.all
     #respond_with(@categories)
@@ -49,15 +47,17 @@ class GalleriesController < ApplicationController
 
   def delete
     @gallery = Gallery.find(params[:gallery_id])
-
+    authorize @gallery
   end
 
   def destroy
-    @galleries = Gallery.all
-    @gallery = Gallery.find(params[:id])
-    @gallery.destroy
-    #authorize @gallery
-    #redirect_to user_galleries_url(current_user), notice: 'Gallery was successfully destroyed.'
+    @gallery = Gallery.destroy(params[:id])
+    respond_to do |f|
+      f.html { redirect_to galleries_url }
+      f.js
+    end
+    authorize @gallery
+    redirect_to user_galleries_url(current_user), notice: 'Gallery was successfully destroyed.'
   end
 
   private

@@ -2,7 +2,7 @@ class Gallery < ApplicationRecord
   belongs_to :user
   validates :user, presence: true
   validates :title, presence: true, uniqueness: { scope: :user_id }
-  validates :title, presence: true, length: { minimum: 3, maximum: 40 }
+  validates :title, presence: true, length: { minimum: 3, maximum: 30 }
 
   has_many   :category_galleries, dependent: :destroy
   has_many   :categories, through: :category_galleries

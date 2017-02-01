@@ -13,7 +13,7 @@ body#galleries div#page-content-wrapper div.row div.image {
 
 	img {
 		height: 200px;
-		width: auto;
+		width: 300px;
 	}
 
 	button.placeholder {
@@ -36,23 +36,19 @@ body#galleries div#page-content-wrapper div.row div.image {
 		background: $astral-blue;
 		border: $shake-spear-blue;
 		color: white;
-		font-size: 25px;
+		font-size: 15px;
+		i {
+			padding: 10px;
+		}
+		p {
+			padding-right: 10px;
+			padding-left: 20px;
+			margin-bottom: 5px;
+		}
 
 		&:hover {
-			font-style: bold;
 			background:#3A88C4;
 		}
-	}
-
-
-	h4#myModalLabel.modal-title {
-		display: flex;
-		justify-content: center;
-	}
-
-	#myModal > div > div > div.modal-body {
-		display: flex;
-		justify-content: center;
 	}
 }
 /* Centers Gallery New Page Form */

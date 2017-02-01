@@ -1,5 +1,6 @@
 <div class="authform">
 	<%= simple_form_for shallow_args(current_user, @image) do |f| %>
+	<ul class="errors"></ul>
 		<div class="form-group">
 			<%= f.label        :file %><br>
 			<%= f.file_field   :file %>
@@ -55,6 +56,7 @@
 	<% end %>
 	<div class="actions">
 		<%= f.submit %>
+		<%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
 	</div>
 
 <% end %>

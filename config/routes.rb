@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :galleries do
       get "delete"
     end
-    resources :images
+    resources :images do
+      get "delete"
+    end
     resources :categories
   end
 

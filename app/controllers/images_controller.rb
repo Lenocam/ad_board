@@ -1,12 +1,14 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  respond_to :js
 
   def index
     @images = current_user.images.all
   end
 
   def show
+    @categories = current_user.categories.all
   end
 
   def new
@@ -17,25 +19,29 @@ class ImagesController < ApplicationController
   end
 
   def create
-    @image = current_user.images.build(image_params)
-      if @image.save!
-        redirect_to @image
-      else
-        render :new
-      end
-
+    @image = current_user.images.create(image_params)
+    redirect_to image_path(@image)
   end
 
   def update
-    if @image.update(image_params)
-      redirect_to @image, notice: 'Image was successfully updated.'
-    else
-      render :edit
+  @image.update(image_params)
+    respond_to do |f|
+      f.html { redirect_to images_url }
+      f.js
     end
+    redirect_to user_images_url(current_user), notice: 'Image Updated'
+  end
+
+  def delete
+    @image = Image.find(params[:image_id])
   end
 
   def destroy
-    @image.destroy
+    @image = Image.destroy(params[:id])
+    respond_to do |f|
+      f.html { redirect_to images_url }
+      f.js
+    end
     redirect_to user_images_url(current_user), notice: 'Image was successfully destroyed.'
   end
 
