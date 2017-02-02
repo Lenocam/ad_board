@@ -4,7 +4,8 @@
 
 
 $(document).on "turbolinks:load", ->
-
-  $('#image_category_ids').chosen
-		no_results_text: "No result found. Press enter to add..."
-		search_contains: true
+  $("#image-modal").on "shown.bs.modal", ->
+    $("#image_category_ids", this).chosen
+      no_results_text: "No results found. Pres enter to add..."
+      search_contains: true
+      width: "200px"

@@ -103,30 +103,10 @@ div#page-content-wrapper div.row div.image {
 	}
 
 }
-/*
-.overlay i {
-	display: flex;
-	background: $very-dark-gray;
-	border: $very-dark-gray;
-	position: relative;
-	bottom: 0;
-	right: 0;
-	height: 0;
-	z-index: 10;
-	transition: all 0.9s ease;
-
-	a {
-		color: $cyan;
-	}
-}
-*/
-
 div.overlay-title {
 	display: flex;
 	justify-content: flex-start;
 	background:rgba(40, 42, 46, 0.3);
-	//background: $very-dark-gray;
-	//opacity: 0.3;
 	position: absolute;
 	top: 0;
 	width: 100%;

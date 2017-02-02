@@ -1,18 +1,16 @@
-<div class="authform">
-	<%= simple_form_for shallow_args(current_user, @image) do |f| %>
+<%= simple_form_for shallow_args(current_user, @image) do |f| %>
 	<ul class="errors"></ul>
-		<div class="form-group">
-			<%= f.label        :file %><br>
-			<%= f.file_field   :file %>
-			<%= f.hidden_field :file_cache %>
-		</div>
+	<%= f.label        :file %><br>
+	<%= f.file_field   :file %>
+	<%= f.hidden_field :file_cache %>
 
 		<%# Assign Categories to Images %>
 
-		<div class="row">
-			<%= f.label :category_ids, "Categories" %><br>
-			<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true }  %>
-		</div>
+
+
+	<%= f.label :category_ids, "Categories" %><br>
+	<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true }  %>
+
 	<% if false %>
 		<%# Set Dates %>
 
@@ -54,10 +52,6 @@
 				</div>
 			</div>
 	<% end %>
-	<div class="actions">
-		<%= f.submit %>
+		<%= f.button :submit, "Add" %>
 		<%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
-	</div>
-
 <% end %>
-</div>

@@ -20,7 +20,7 @@ class ImagesController < ApplicationController
 
   def create
     @image = current_user.images.create(image_params)
-    redirect_to image_path(@image)
+    redirect_to user_images_url(current_user), notice: "Your Image has been added"
   end
 
   def update
