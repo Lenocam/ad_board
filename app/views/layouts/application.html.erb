@@ -21,8 +21,12 @@
     <%= render 'layouts/sidebar' %>
       <div id="page-content-wrapper">
         <%= render 'layouts/messages' %>
+        <%= render "galleries/gallery_modal" %>
+        <%= render "images/image_modal" %>
+
 
         <%= yield %>
+
       </div>
     </div>
   </main>

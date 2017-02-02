@@ -1,5 +1,5 @@
 <%= simple_form_for shallow_args(current_user, @image) do |f| %>
-	<ul class="errors"></ul>
+<ul class="errors"></ul>
 	<%= f.label        :file %><br>
 	<%= f.file_field   :file %>
 	<%= f.hidden_field :file_cache %>

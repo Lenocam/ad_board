@@ -2,8 +2,8 @@
   <div class="btn-group">
     <button type="button" class="btn btn-default navbar-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Create Stuff<%= icon('caret-down') %></button>
     <ul class="dropdown-menu">
-      <li><%= icon('television') %><%= link_to 'New Gallery', new_user_gallery_path(current_user) %></li>
-      <li><%= icon('file-image-o') %><%= link_to 'New Image', new_user_image_path(current_user) %></li>
+      <li><%= icon('television') %><%= link_to 'New Gallery', new_user_gallery_path(current_user), remote: true %></li>
+      <li><%= icon('file-image-o') %><%= link_to 'New Image', new_user_image_path(current_user), remote: true %></li>
     </ul>
 
   </div>

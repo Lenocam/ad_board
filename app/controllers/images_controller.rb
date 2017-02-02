@@ -20,15 +20,15 @@ class ImagesController < ApplicationController
 
   def create
     @image = current_user.images.create(image_params)
-    redirect_to user_images_url(current_user), notice: "Your Image has been added"
+    if @image.save
+      redirect_to user_images_url(current_user), notice: "Your Image has been added"
+    else
+      redirect_to user_images_url(current_user), notice: "You need to have a image selected to save."
+    end
   end
 
   def update
   @image.update(image_params)
-    respond_to do |f|
-      f.html { redirect_to images_url }
-      f.js
-    end
     redirect_to user_images_url(current_user), notice: 'Image Updated'
   end
 
