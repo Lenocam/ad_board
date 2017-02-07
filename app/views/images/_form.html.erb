@@ -1,15 +1,30 @@
 <%= simple_form_for shallow_args(current_user, @image) do |f| %>
-<ul class="errors"></ul>
-	<%= f.label        :file %><br>
-	<%= f.file_field   :file %>
-	<%= f.hidden_field :file_cache %>
+	<ul class="errors"></ul>
+
+
+<div class="image-category-form-group">
+	<div class="fileinput fileinput-new" data-provides="fileinput">
+		<div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;">	<%= image_tag(@image.file_url(:index).to_s) %></div><br>
+		<div class="image_select_buttons">
+			<span class="btn btn-primary btn-file"><%= f.file_field :file, class: "fileinput-new" %>Select image</span>
+			<%= f.hidden_field :file_cache %>
+			<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+		</div>
+	</div>
+
+	<br>
 
 		<%# Assign Categories to Images %>
 
 
+	<div class="image-category">
+		<%= f.label :category_ids, "Categories" %><br>
+		<%= f.collection_select :category_ids,  current_user.categories.all, :id, :name, {}, { multiple: true } %>
+	</div>
 
-	<%= f.label :category_ids, "Categories" %><br>
-	<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true }  %>
+</div>
+
+
 
 	<% if false %>
 		<%# Set Dates %>
@@ -52,6 +67,9 @@
 				</div>
 			</div>
 	<% end %>
-		<%= f.button :submit, "Add" %>
+	<div class="add-cancel-buttons">
+		<%= f.button :submit, "Add" %><br>
 		<%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
+	</div>
+
 <% end %>

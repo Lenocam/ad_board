@@ -1,8 +1,11 @@
 <%= simple_form_for shallow_args(current_user, @gallery), remote: true do |f| %>
 	<ul class="errors"></ul>
-	<%= f.input :title %><br>
-	<%= f.label :category_ids, "Categories" %><br>
-	<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true } %>
+	<div class="form-group">
+		<%= f.input :title %><br>
+		<%= f.label :category_ids, "Categories" %><br>
+		<%= f.collection_select :category_ids, current_user.categories.all, :id, :name, {}, { multiple: true } %>
+	</div>
+
 
 	<%= f.button :submit, "Add" %>
 	<%= link_to "Cancel", "#", class: "btn", data: {dismiss: "modal"} %>
