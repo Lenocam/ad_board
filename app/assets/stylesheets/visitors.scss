@@ -1,3 +1,5 @@
+@import 'color';
+
 .old-tv-screen {
   box-sizing: content-box;
   width: 500px;
@@ -29,4 +31,8 @@
   text-overflow: clip;
   background: #1abc9c;
   text-shadow: none;
+}
+
+p {
+  color: $purple;
 }

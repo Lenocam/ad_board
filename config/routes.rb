@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'visitors#index'
+  get "visitors/contact"
   devise_for :users, path: 'accounts', :controllers => { registrations: 'registrations'}
   resources :users, shallow: true do
     resources :galleries do
