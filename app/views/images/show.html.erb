@@ -1,17 +1,29 @@
 <div class="image-show-wrapper">
 	<div class="image-show">
 
+
+		<button class="fa fa-bars  navbar-inverse" href="#right-menu-toggle"  id="right-menu-toggle"></button>
+
 		<%= image_tag(@image.file_url(:show_fit).to_s) %>
 
 	</div>
 </div>
 
+<% content_for :pizza do %>
+	<div id="right-sidebar-wrapper">
+		<div id="category-list">
+			<%= simple_form_for @image, remote: true do |f| %>
 
-<div id="category-list">
-	<%= simple_form_for @image, remote: true do |f| %>
+				<%= f.collection_check_boxes :category_ids,  current_user.categories.all, :id, :name, {}, { multiple: true } %>
+				<%= f.button :submit, "Add" %><br>
+			<% end %>
+		</div>
+	</div>
+<% end %>
 
-		<%= f.collection_check_boxes :category_ids,  current_user.categories.all, :id, :name, {}, { multiple: true } %>
-		<%= f.button :submit, "Add" %><br>
-	<% end %>
-
-</div>
+<script>
+$("#right-menu-toggle").click(function(e) {
+		e.preventDefault();
+		$("#wrapper").toggleClass("right-toggled");
+});
+</script>

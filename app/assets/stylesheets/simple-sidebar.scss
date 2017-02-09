@@ -4,13 +4,14 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 @import 'color';
-
 /* Toggle Styles */
-
 #wrapper {
+  height: inherit;
+  width: inherit;
     padding-left: 0;
-}
+    padding-right: 0;
 
+}
 /* Toggled means away */
 #wrapper.toggled {
     padding-left: 250px;
@@ -27,7 +28,6 @@
     background: #000;
     transition: all 0.5s ease;
 }
-
 /* Toggled means away */
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
@@ -38,15 +38,12 @@
     display: absolute;
     padding: 15px;
 }
-
 /* Toggled means away */
 #wrapper.toggled #page-content-wrapper {
     position: absolute;
     margin-right: -250px;
 }
-
 /* Sidebar Styles */
-
 .sidebar-nav {
     position: absolute;
     top: 0;
@@ -64,7 +61,7 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color:$very-light-gray;
+    color: $very-light-gray;
 }
 
 .sidebar-nav li a:hover {
@@ -94,43 +91,44 @@
 }
 
 //@media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
+#wrapper {
+    padding-left: 250px;
+    padding-right: 250px;
+}
 
-    #wrapper.toggled {
-        padding-left: 0;
-    }
+#wrapper.toggled {
+    padding-left: 0;
+}
 
-    #sidebar-wrapper {
-        width: 250px;
-    }
+#sidebar-wrapper {
+    width: 250px;
+}
 
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
+#wrapper.toggled #sidebar-wrapper {
+    width: 0;
+}
 
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
+#page-content-wrapper {
+    padding: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    div.row {
         display: flex;
-        justify-content:center;
-        div.row {
-        display: flex;
-        flex-wrap:wrap;
-        //justify-content:center;
-        justify-content:flex-start;
-      }
-
-
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
+}
 
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-        div.row {
+#wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+
+    div.row {
         display: flex;
-        flex-wrap:wrap;
-      }
+        flex-wrap: wrap;
     }
+}
+
 //}
