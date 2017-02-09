@@ -42,6 +42,7 @@ body#images.show {
 #wrapper.right-toggled {
 	padding-right: 250px;
 }
+
 #right-sidebar-wrapper {
 	z-index: 1000;
 	position: fixed;
@@ -67,7 +68,7 @@ body#images.show {
     display: absolute;
     padding: 15px;
 }
-
+//Toggle means away
 #wrapper.right-toggled #page-content-wrapper {
     position: absolute;
     margin-left: -250px;
@@ -201,4 +202,17 @@ div#image_category_ids_chosen.chosen-container.chosen-container-multi.chosen-wit
 		display:flex;
 		flex-wrap: wrap;
 	}
+}
+
+//image category sidebar checkbox pretty now
+input[type=checkbox] + label {
+  color: $light-gray;
+  font-style: italic;
+}
+input[type=checkbox]:checked + label {
+  color: $shake-spear-blue;
+  font-style: normal;
+}
+label.collection_check_boxes {
+	margin-left: 10px;
 }
