@@ -11,7 +11,7 @@ $(document).on "turbolinks:load", ->
       width: "200px"
   $('.edit_image input[type=submit]').remove()
 
-$ ->
-  $('.edit_image input[type=checkbox]').click ->
-    $(this).closest('form').submit()
-    return
+  $ ->
+    $('.edit_image input[type=checkbox]').click ->
+      $(this).closest('form').submit()
+      return
