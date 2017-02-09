@@ -1,4 +1,4 @@
-desc "Reprocesses images after adding versions in file uploader for CarrierWave"
+desc "Reprocesses images after adding new versions in file uploader for CarrierWave"
 task reprocess_images: :environment do
   puts "Reprocessing Images. Chill out for a couple minutes.  ¯\_(ツ)_/¯"
   i = 0

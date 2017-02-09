@@ -23,13 +23,18 @@ class ImagesController < ApplicationController
     if @image.save
       redirect_to user_images_url(current_user), notice: "Your Image has been added"
     else
+
       redirect_to user_images_url(current_user), notice: "You need to have a image selected to save."
     end
   end
 
   def update
-  @image.update(image_params)
-    redirect_to user_images_url(current_user), notice: 'Image Updated'
+  @image.update_attributes!(image_params)
+  respond_to do |format|
+    format.html { redirect_to user_images_url(current_user), notice: 'Image Updated' }
+    format.js
+  end
+
   end
 
   def delete

@@ -1,19 +1,62 @@
 @import 'color';
+
+//Image New, not modal form
 body#images.new {
 	#image_category_ids {
 		width: 450px;
 	}
 }
 
-div.image-show {
-	display: flex;
-	justify-content:center;
-}
 
+//Image Show Page
+body#images.show {
+	div#page-content-wrapper {
+		display:flex;
+		flex-flow: row;
+		//justify-content: center;
+	div.image-show-wrapper {
+		width: 100%;
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		background:transparent;
+			div.image-show {
+				background:transparent;
+				height: 100%;
+				//width: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				img {
+					display:flex;
+
+				}
+			}
+	}
+
+		div#category-list {
+			right:250px;
+			width: 250px;
+			background: red;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+
+			.simple_form.edit_image {
+				background: blue;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+	}
+}
+//Image overlay for index images
 body#images.index div.overlay i {
 	font-size: 15px;
 }
 
+//Image modal
 div.modal-header {
 	width: 100%;
 
@@ -36,6 +79,7 @@ div.image-category-form-group {
 	justify-content: space-between;
 }
 
+//Edit Modal
 div.fileinput.fileinput-exists {
 	background:transparent;
 	span.btn.btn-primary.btn-file {
@@ -50,8 +94,6 @@ div.fileinput.fileinput-new {
 	background:transparent;
 }
 
-
-
 div.image_select_buttons {
 	display: flex;
 	justify-content: center;
@@ -65,7 +107,6 @@ div.image_select_buttons {
 	//justify-content: center;
 	margin-left: 20px;
 }
-
 
 div.fileinput-preview.thumbnail {
 	align-self: center;

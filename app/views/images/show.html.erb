@@ -1,17 +1,17 @@
-<div class="image-show">
+<div class="image-show-wrapper">
+	<div class="image-show">
 
-	<%= image_tag(@image.file_url(:show).to_s) %>
-	<% if false %>
+		<%= image_tag(@image.file_url(:show_fit).to_s) %>
 
-	
-		<p>Start At: <%# @image.start_at %></p>
-		<p>End At:   <%# @image.end_at %></p>
-		<p><%=  %></p>
-		<br>
-		<%= link_to 'Edit', edit_image_path(@image) %>
-		|
-		<%= link_to 'Back', :back %>
-		|
-		<%= link_to 'Delete This Image', @image, method: :delete, data: { confirm: "Think about it, do you really want it to end this way?"} %>
+	</div>
+</div>
+
+
+<div id="category-list">
+	<%= simple_form_for @image, remote: true do |f| %>
+
+		<%= f.collection_check_boxes :category_ids,  current_user.categories.all, :id, :name, {}, { multiple: true } %>
+		<%= f.button :submit, "Add" %><br>
 	<% end %>
+
 </div>

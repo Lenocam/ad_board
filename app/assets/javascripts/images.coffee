@@ -9,3 +9,9 @@ $(document).on "turbolinks:load", ->
       no_results_text: "No results found. Pres enter to add..."
       search_contains: true
       width: "200px"
+  $('.edit_image input[type=submit]').remove()
+
+$ ->
+  $('.edit_image input[type=checkbox]').click ->
+    $(this).closest('form').submit()
+    return
