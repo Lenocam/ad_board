@@ -1,35 +1,90 @@
 @import 'color';
+@import 'media';
 
 body#categories.index #page-content-wrapper div.row {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
 }
+
 ul#categories-list {
-  width: 400px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  background:#fff;
-  li {
-    display:flex;
-    background:#fff;
-    border:#fff;
-    justify-content:space-between;
+	width: 400px;
+	display: flex;
+	flex-flow: wrap;
+	flex-direction: column;
+	justify-content: center;
+	background: #fff;
+
+	li {
+		display: flex;
+		background: #fff;
+		border: #fff;
+		justify-content: space-between;
+
 		a {
-			color:$very-dark-gray;
+			color: $very-dark-gray;
+
 			&:hover {
-				color:$purple;
+				color: $purple;
 			}
 		}
 
 		span.button-groupyiness a {
-			color:$very-dark-gray;
+			color: $very-dark-gray;
 		}
-
-
-  }
+	}
 }
+
 #category-delete {
-  background:$red;
+	background: $red;
+}
+
+
+body#categories.show {
+
+	div#page-content-wrapper {
+		h1 {
+			background:transparent;
+		}
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+		width: 100%;
+		background:transparent;
+		div.category-box {
+			display: flex;
+			flex-wrap: wrap;
+			flex-flow: row;
+			justify-content: space-around;
+			background:transparent;
+			div.category-image-box {
+				h4 {
+					background:transparent;
+				}
+				background:transparent;
+				display: flex;
+				flex-wrap: wrap;
+				 align-self: flex-start;
+
+			}
+			div.category-gallery-box {
+				h4 {
+					display:flex;
+					flex-flow: row nowrap;
+					background:transparent;
+				}
+				ul {
+					padding-left: 0px;
+				}
+				background:transparent;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+
+
+			}
+		}
+	}
 }

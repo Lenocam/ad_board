@@ -1,0 +1,6 @@
+
+  <% @category.images.each do |image| %>
+  <div class="image">
+		<%= link_to image_tag(image.file_url(:index).to_s), image %>
+  </div>
+	<% end %>

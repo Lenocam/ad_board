@@ -1,23 +1,20 @@
-<p id="notice"><%= notice %></p>
+<h1>Category: <%= @category.name %></h1>
+<div class="category-box">
 
-<h3><%= @category.name %></h3>
-<%= link_to 'Edit', edit_category_path(@category) %>
+	<div class="category-image-box">
+		<h4>Category Images</h4><br>
+		<div class="row">
+			<%= render "categories/image" %>
+		</div>
+	</div>
 
-<h3>Galleries with Category</h3><br>
-<% @category.galleries.each do |g| %>
-<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-	<li><%= link_to g.title, g %></li>
-</ul>
-
-<% end %>
-
-<h3>Category Images</h3><br>
-<div class="row">
-	<div class="flex-images">
-		<% @category.images.each do |image| %>
-		<ul class="col-lg-2 col-md-2 col-sm-3 col-xs-4">
-			<li class="item floating-box"><%= link_to image_tag(image.file_url(:show_fit).to_s), image %></li>
+	<div class="category-gallery-box">
+		<h4>Galleries with Category</h4><br>
+		<% @category.galleries.each do |g| %>
+		<ul>
+			<li><%= link_to g.title, g %></li>
 		</ul>
 		<% end %>
 	</div>
+
 </div>

@@ -28,6 +28,7 @@ ul {
 /*Flexbox for pages*/
 div#page-content-wrapper {
 	display: flex;
+	justify-content: flex-start;
 	flex-direction: column;
 	height: 100%;
 	width: 100%

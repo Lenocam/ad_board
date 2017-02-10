@@ -1,11 +1,12 @@
-@import 'color';
-//Image New, not modal form
+@import 'color'; //Image New, not modal form
+
 body#images.new {
 	#image_category_ids {
 		width: 450px;
 	}
 }
 //Image Show Page
+
 body#images.show {
 	div#page-content-wrapper {
 		display: flex;
@@ -20,7 +21,6 @@ body#images.show {
 			flex-flow: column wrap;
 			align-items: center;
 			//background: orange;
-
 			div.image-show {
 				//background: green;
 				height: 100%;
@@ -35,9 +35,7 @@ body#images.show {
 		}
 	}
 }
-
 //Image-show-category-sidebar
-
 /*Toggled means away*/
 #wrapper.right-toggled {
 	padding-right: 250px;
@@ -56,31 +54,28 @@ body#images.show {
 	margin-top: 51px;
 	top: 0;
 }
-
 /* Toggled means away */
 #wrapper.right-toggled #right-sidebar-wrapper {
-    //width: 250px;
-		width: 0;
+	width: 0;
 }
 
 #page-content-wrapper {
-    width: 100%;
-    display: absolute;
-    padding: 15px;
+	width: 100%;
+	display: absolute;
+	padding: 15px;
 }
 //Toggle means away
+
 #wrapper.right-toggled #page-content-wrapper {
-    position: absolute;
-    margin-left: -250px;
+	position: absolute;
+	margin-left: -250px;
 }
-
-
 //Image overlay for index images
-
 body#images.index div.overlay i {
 	font-size: 15px;
 }
 //Image modal
+
 div.modal-header {
 	width: 100%;
 
@@ -105,8 +100,6 @@ div.image-category-form-group {
 	flex-flow: row;
 	justify-content: space-between;
 }
-
-
 //Edit Modal
 div.fileinput.fileinput-exists {
 	background: transparent;
@@ -171,27 +164,25 @@ div#image_category_ids_chosen.chosen-container.chosen-container-multi.chosen-wit
 #right-sidebar-wrapper {
 	width: 250px;
 	//List of categories
-		div#category-list {
-			position: absolute;
-			top: 0;
-			width: 250px;
-			margin: 0;
-			padding: 0;
-			height: inherit;
+	div#category-list {
+		position: absolute;
+		top: 0;
+		width: 250px;
+		margin: 0;
+		padding: 0;
+		height: inherit;
 
-
-			.simple_form.edit_image {
-				font-style: Helvetica;
-				font-size: 14px;
-				color: white;
-				height: 100%;
-
-				padding-left: 20px;
-				display: flex;
-				flex-direction: column;
-				align-items: flex-start;
-			}
+		.simple_form.edit_image {
+			font-style: Helvetica;
+			font-size: 14px;
+			color: white;
+			height: 100%;
+			padding-left: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
 		}
+	}
 }
 
 #wrapper.right-toggled #page-content-wrapper {
@@ -199,20 +190,21 @@ div#image_category_ids_chosen.chosen-container.chosen-container-multi.chosen-wit
 	margin-left: 0;
 
 	div.row {
-		display:flex;
+		display: flex;
 		flex-wrap: wrap;
 	}
 }
-
 //image category sidebar checkbox pretty now
 input[type=checkbox] + label {
-  color: $light-gray;
-  font-style: italic;
+	color: $light-gray;
+	font-style: italic;
 }
+
 input[type=checkbox]:checked + label {
-  color: $shake-spear-blue;
-  font-style: normal;
+	color: $shake-spear-blue;
+	font-style: normal;
 }
+
 label.collection_check_boxes {
 	margin-left: 10px;
 }
