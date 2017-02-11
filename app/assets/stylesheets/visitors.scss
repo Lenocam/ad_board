@@ -1,38 +1,30 @@
 @import 'color';
 
-.old-tv-screen {
-  box-sizing: content-box;
-  width: 500px;
-  height: 350px;
-  position: relative;
-  margin: 20px 0;
-  border: none;
-  border-radius: 50% / 10%;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: white;
-  text-align: center;
-  text-indent: 0.1em;
-  text-overflow: clip;
-  background: #1abc9c;
+body#visitors.index {
+    div#page-content-wrapper {
+      //background:white;
+      background: url('library.jpg') center center fixed no-repeat;
+      background-size: 100% ;
+      //overflow: hidden;
+      position: absolute;
+      top: 50px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      overflow: hidden;
+
+    }
+
+}
+/*#flex-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100%;
 }
 
-.old-tv-screen::before {
-  box-sizing: content-box;
-  position: absolute;
-  content: "";
-  top: 10%;
-  right: -5%;
-  bottom: 10%;
-  left: -5%;
-  border: none;
-  border-radius: 5% / 50%;
-  font: normal 100%/normal Arial, Helvetica, sans-serif;
-  color: rgba(0,0,0,1);
-  text-overflow: clip;
-  background: #1abc9c;
-  text-shadow: none;
-}
 
-p {
-  color: $purple;
-}
+
+
+*/

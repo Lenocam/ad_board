@@ -1,4 +1,5 @@
 @import 'color';
+@import 'media';
 
 body#galleries {
 	#gallery_category_ids {
@@ -6,7 +7,13 @@ body#galleries {
 	}
 }
 
+#galleries-list {
+	height: inherit;
+}
 
+div#galleries-list {
+	justify-content: center;
+}
 body#galleries div#page-content-wrapper div.row div.image {
 	width: auto;
 	height: 200px;

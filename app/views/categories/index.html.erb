@@ -1,15 +1,17 @@
-<h1><%= current_user.name %>'s Categories</h1>
-	<div class="row">
+<div id="categories-index-form-and-list">
+<div class="box one">
+	<h1 ><%= current_user.name %>'s Categories</h1>
+</div>
+
+	<div class="box two">
 		<div id="category-form" style="display:none;"></div>
 	</div>
-<div class="row">
-	<ul class="list-group" id="categories-list"><%= render @categories %></ul>
-
-	<div class="row">
+	<div class="box three">
+		<ul class="list-group" id="categories-list"><%= render @categories %></ul>
+	</div>
+	<div class="box four">
 		<%= link_to new_user_category_path, remote: true do %>
-			<button>New Category</button>
+		<button class="btn btn-info">New Category</button>
 		<% end %>
 	</div>
-
-
 </div>

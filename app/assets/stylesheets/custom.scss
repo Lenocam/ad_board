@@ -25,6 +25,8 @@ html {
 ul {
 	list-style-type: none;
 }
+
+
 /*Flexbox for pages*/
 div#page-content-wrapper {
 	display: flex;
@@ -34,24 +36,28 @@ div#page-content-wrapper {
 	width: 100%
 }
 
-div#page-content-wrapper h1,
-h2 {
+div#page-content-wrapper h1 {
 	display: flex;
-	flex-flow: row nowrap;
 	justify-content: center;
-	background: transparent;
-	padding: 10px;
-	margin: 0;
-	width: auto;
+	//background: green;
 	color: $cyan;
+	min-height: 45px;
 }
 
 div#page-content-wrapper div.row {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
 	margin: 0.5vw;
+	//background:purple;
+	.btn.btn-primary {
+		display: flex;
+		align-self: center;
+		justify-content: flex-start;
+		flex-direction: column;
+	}
+
 }
 
 div#page-content-wrapper div.row div.image {

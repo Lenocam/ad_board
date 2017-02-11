@@ -1,7 +1,9 @@
 <h1><%= current_user.name %>'s Galleries</h1>
-  <div class="row">
-		<%= link_to "new gallery", new_user_gallery_path, remote: true, class: "btn btn-primary" %>
-	</div>
+
+<div class="row">
+    <%= link_to "new gallery", new_user_gallery_path, remote: true, class: "btn btn-primary" %>
+</div>
+
 <div class="row gallery-index" id="galleries-list">
-  <%= render @galleries %>
+    <%= render @galleries %>
 </div>

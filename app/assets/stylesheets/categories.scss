@@ -1,31 +1,82 @@
 @import 'color';
 @import 'media';
 
-body#categories.index #page-content-wrapper div.row {
+body#categories.index #page-content-wrapper {
+	height: auto;
 	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	.box {
+	    min-width: 200px;
+	    width: 100%;
+	}
+	.one {
+	    ///background:$red;
+	    background:transparent;
+	    flex: 1;
+	    width: 100%;
+	    align-self: center;
+	}
+
+	.two {
+	    ///background:$green;
+	    background:transparent;
+	    flex-grow: 1;
+	}
+
+	.three {
+	    ///background:$shake-spear-blue;
+	    background:transparent;
+	    //flex-grow: 0;
+	}
+
+	.four {
+	  ///background:$Mountain-Meadow;
+	  background:transparent;
+	  flex-grow: 1;
+	}
+
+}
+
+div#categories-index-form-and-list {
+	flex-basis: 800px;
+}
+
+div.new-category-box {
+	border-radius: 4px;
+	background:$very-light-gray;
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+
 }
 
 ul#categories-list {
-	width: 400px;
-	display: flex;
-	flex-flow: wrap;
-	flex-direction: column;
-	justify-content: center;
-	background: #fff;
+	border-radius: 4px;
+	background: $very-light-gray;
+
 
 	li {
 		display: flex;
-		background: #fff;
-		border: #fff;
+		background: $very-light-gray;
+		border: $very-light-gray;
 		justify-content: space-between;
+		&:hover {
+			background: $blue;
+			border: $shake-spear-blue;
+			transition: all 1s ease;
+		}
 
 		a {
 			color: $very-dark-gray;
 
 			&:hover {
-				color: $purple;
+				color: $astral-blue;
+				text-decoration:none;
 			}
 		}
 
@@ -37,9 +88,29 @@ ul#categories-list {
 
 #category-delete {
 	background: $red;
+		&:hover {
+			background: $mandy-the-sea-red;
+			text-decoration:none;
+		}
+}
+#category-edit {
+	background:$green;
+	&:hover {
+		background:$darker-green;
+		text-decoration: none;
+	}
 }
 
 
+body#categories.index #page-content-wrapper div > a > button {
+	background: $purple;
+	border: $purple;
+	&hover {
+		background: $darker-purple;
+	}
+}
+
+/* Categories Show Page */
 body#categories.show {
 
 	div#page-content-wrapper {

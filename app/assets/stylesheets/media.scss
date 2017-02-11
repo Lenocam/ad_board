@@ -1,0 +1,8 @@
+body#galleries, #images, #categories, #accounts, #users, #registrations {
+	@media all and (max-width: 400px) {
+		//background: orange;
+		h1 {
+			font-size: 25px;
+		}
+	}
+}
