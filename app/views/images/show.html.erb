@@ -1,7 +1,4 @@
 <div class="image-show-wrapper">
-
-
-
 	<div class="button-row">
 	  <button class="btn btn-primary" href="#right-menu-toggle"  id="right-menu-toggle">Image Categories</button>
 	</div>
@@ -10,12 +7,8 @@
 		<%= image_tag(@image.file_url(:show_fit).to_s) %>
 	</div>
 </div>
-
-
-
-
-
-<% content_for :pizza do %>
+<!-- Right Side Toggle for image Categories  -->
+<% content_for :images_categories_toggle do %>
 	<div id="right-sidebar-wrapper">
 		<div id="category-list">
 			<%= simple_form_for @image, remote: true do |f| %>
