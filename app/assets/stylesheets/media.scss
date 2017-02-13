@@ -14,7 +14,7 @@ body#galleries {
 
 header > nav > div > div.navbar-collapse.collapse.in > ul.nav.navbar-nav.navbar-right {
 	@media all and (max-width: 750px) {
-		justify-content: flex-end;
+		justify-content: space-around;
 		align-items: flex-start;
 		display: flex;
 		button {
