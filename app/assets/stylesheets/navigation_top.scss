@@ -56,14 +56,8 @@ button.btn.btn-default.navbar-btn.dropdown-toggle {
     margin-left: 5px;
   }
 }
-div.btn-group.open ul.dropdown-menu li.divider {
-  padding-top: 5px;
-  margin-bottom: 0px;
-  margin-top:0px;
-  &:hover {
-
-  }
-  li {
+//div.btn-group.open ul.dropdown-menu li
+li {
   &:hover{
     background:$very-light-gray;
     a {
@@ -80,4 +74,4 @@ div.btn-group.open ul.dropdown-menu li.divider {
     padding-left: 5;
     display: inline;
   }
-}}
+}

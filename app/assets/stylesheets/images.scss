@@ -22,17 +22,20 @@ body#images.show {
 	div.image-show-wrapper {
 		//width: 100%;
 		//height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		//display: flex;
+		//flex-direction: column;
+		//align-items: center;
+		max-width: 800px;
 		background: orange;
 
 		div.button-row {
 			width: 100%;
+
 			background:lightblue;
 			display: flex;
 			flex-direction: row;
-			//flex: 1;
+			flex: 1;
+			//flex-shrink: 4;
 			justify-content: center;
 			//align-items: center;
 		}
@@ -40,20 +43,24 @@ body#images.show {
 		div.image-show {
 			display: flex;
 			flex: 1;
+			flex-shrink: 1;
 			flex-direction: row;
-			flex-basis: 100%;
-			max-height: 100%;
-			max-width: 100%;
-			min-width: 200px;
-			min-height: 200px;
+			//flex-basis: 100%;
+			//max-height: 100%;
+			//max-width: 100%;
+			//min-width: 200px;
+			//min-height: 200px;
 			justify-content: center;
 			background: green;
 			align-items: center;
 			img {
 				display: flex;
+				//flex-shrink: 1;
 				flex: 1;
+				flex-basis: 800px;
 				max-width: 100%;
-				overflow: hidden;
+				//max-width: 100%;
+				//overflow: hidden;
 			}
 		}
 	}
