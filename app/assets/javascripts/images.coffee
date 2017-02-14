@@ -6,7 +6,7 @@
 $(document).on "turbolinks:load", ->
   $("#image-modal").on "shown.bs.modal", ->
     $("#image_category_ids", this).chosen
-      no_results_text: "No results found. Pres enter to add..."
+      no_results_text: "No results found. Press enter to add..."
       search_contains: true
       width: "200px"
   $('.edit_image input[type=submit]').remove()

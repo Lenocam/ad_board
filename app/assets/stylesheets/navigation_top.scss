@@ -53,15 +53,26 @@ ul.nav.navbar-nav.navbar-right li {
 button.btn.btn-default.navbar-btn.dropdown-toggle {
   right: 15px;
   min-width: 113px;
+
   i {
     margin-left: 5px;
   }
 }
 //div.btn-group.open ul.dropdown-menu li
+header > nav > div > div.collapse.navbar-collapse > ul.nav.navbar-nav.navbar-right > div.btn-group.open > ul {
+  padding-bottom: 0px;
+  padding-top: 0px;
+  border-radius: 4px;
+}
+
 li {
+  padding-bottom: 15px;
   &:hover{
     background:$very-light-gray;
     a {
+      &:hover {
+        background:$very-light-gray;
+      }
       background:$very-light-gray;
     }
   }

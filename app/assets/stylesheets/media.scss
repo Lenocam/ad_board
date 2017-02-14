@@ -26,3 +26,21 @@ header > nav > div > div.navbar-collapse.collapse.in > ul.nav.navbar-nav.navbar-
 		}
 	}
 }
+#page-content-wrapper {
+	display: flex;
+	align-items: center;
+	
+	div.authform {
+		display: flex;
+		flex-flow: column;
+		align-items:center;
+		.form-group {
+			display: flex;
+			flex-flow: column;
+
+		}
+	#new_user > input.button.right{
+	align-self:center;
+
+}}
+}

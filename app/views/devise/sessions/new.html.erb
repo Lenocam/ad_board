@@ -1,8 +1,9 @@
 <div class="authform">
+
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
   <%= link_to root_path, :class => 'nav-icon close' do %>
     <span class="fa fa-times"></span>
   <% end %>
-  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
     <h1>Sign in</h1>
     <%= devise_error_messages! %>
     <div class="form-group">

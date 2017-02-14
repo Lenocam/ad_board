@@ -1,50 +1,21 @@
 Ad Board
 ================
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+The project at this juncture is a photo gallery that can be categorized. The users see their galleries, images and categories in a closed system, so that other users are not able to another's contributions. The long term goal for this project is to have a iOS companion app and streaming functionality to Chromecast and AppleTv.
+
+This project is currently on pause, but I have it pushed to Heroku incomplete, mostly because I don't have an AWS back end or other ways to save pictures permanently. The reason there is no AWS back end is because there is also no pay structure in place yet and I'd rather pay for people to save tons of photos.
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
 Rails Composer is supported by developers who purchase our RailsApps tutorials.
 
-Problems? Issues?
------------
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
+The project at this juncture is a photo gallery that can be categorized. The users see their galleries, images and categories in a closed system, so that other users are not able to another's contributions. The long term goal for this project is to have a iOS companion app and streaming functionality to Chromecast and AppleTv.
 
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
+This project is currently on pause, but I have it pushed to Heroku incomplete, mostly because I don't have an AWS back end or other ways to save pictures permanently. The reason there is no AWS back end is because there is also no pay structure in place yet and I'd rather pay for people to save tons of photos.
 
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
+Link to App on Heroku:
+https://polar-springs-93488.herokuapp.com/
 
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.3.3
-- Rails 5.0.0.1
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
+You can create an account and interact, but your pictures won't be saved permanently.

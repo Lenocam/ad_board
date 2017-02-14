@@ -13,7 +13,7 @@ body#images.new {
 //Image Show Page
 
 body#images.show {
-	background: pink;
+	//background: pink;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -25,13 +25,15 @@ body#images.show {
 		//display: flex;
 		//flex-direction: column;
 		//align-items: center;
+		align-self: center;
 		max-width: 800px;
-		background: orange;
+		//background: orange;
 
 		div.button-row {
 			width: 100%;
+			padding-bottom: 5px;
 
-			background:lightblue;
+			//background:lightblue;
 			display: flex;
 			flex-direction: row;
 			flex: 1;
@@ -128,8 +130,14 @@ form#new_image.simple_form.new_image {
 
 div.image-category-form-group {
 	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
+	flex-flow: column;
+	align-items: center;
+}
+div.image-category.form-group {
+	//display: flex;
+	//flex-flow: column;
+	//align-items: center;
+	//justify-content: flex-start;
 }
 //Edit Modal
 

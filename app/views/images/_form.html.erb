@@ -17,7 +17,7 @@
 		<%# Assign Categories to Images %>
 
 
-	<div class="image-category">
+	<div class="image-category form-group">
 		<%= f.label :category_ids, "Categories" %><br>
 		<%= f.collection_select :category_ids,  current_user.categories.all, :id, :name, {}, { multiple: true } %>
 	</div>
