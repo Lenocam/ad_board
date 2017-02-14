@@ -17,30 +17,34 @@ header > nav > div > div.navbar-collapse.collapse.in > ul.nav.navbar-nav.navbar-
 		justify-content: space-around;
 		align-items: flex-start;
 		display: flex;
+
 		button {
 			margin: 5px;
 		}
+
 		div.btn-group.open > ul {
 			//min-width: 0;
 			margin-left: -20px;
 		}
 	}
 }
+
 #page-content-wrapper {
 	display: flex;
 	align-items: center;
-	
+
 	div.authform {
 		display: flex;
 		flex-flow: column;
-		align-items:center;
+		align-items: center;
+
 		.form-group {
 			display: flex;
 			flex-flow: column;
-
 		}
-	#new_user > input.button.right{
-	align-self:center;
 
-}}
+		#new_user > input.button.right {
+			align-self: center;
+		}
+	}
 }
